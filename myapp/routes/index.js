@@ -42,4 +42,9 @@ router.get('/resultadoBusqueda.ejs', function(req, res, next) {
   res.render('resultadoBusqueda', { title: 'Express' });
 });
 
+//Get partials
+router.get('/partials/footer.ejs', function(req, res, next) {
+  res.render('footer', { title: 'Express' });
+});
+
 module.exports = router;
