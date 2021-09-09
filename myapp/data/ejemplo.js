@@ -1,0 +1,3 @@
+const publicacion = {
+    titulo: "Nissan"
+}
