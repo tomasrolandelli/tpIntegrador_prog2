@@ -3,10 +3,10 @@ var express = require('express');
 var router = express.Router();
 
 //VARIABLES
-let registracionController = require('../controllers/registracionController')
+let detalleUsuarioController = require('../controllers/detalleUsuarioController')
 
 //RUTA
-router.get('/', registracionController.index);
+router.get('/', detalleUsuarioController.index);
 
 //EXPORTAR
 module.exports = router

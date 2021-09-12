@@ -3,10 +3,10 @@ var express = require('express');
 var router = express.Router();
 
 //VARIABLES
-let registracionController = require('../controllers/registracionController')
+let detallePostController = require('../controllers/detallePostController')
 
 //RUTA
-router.get('/', registracionController.index);
+router.get('/', detallePostController.index);
 
 //EXPORTAR
 module.exports = router

@@ -1,9 +1,12 @@
+//EXPRESS
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+//VARIABLES
+let resultadoBusquedaController = require('../controllers/resultadoBusquedaController')
 
-module.exports = router;
+//RUTA
+router.get('/', resultadoBusquedaController.index);
+
+//EXPORTAR
+module.exports = router

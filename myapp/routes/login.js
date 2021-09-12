@@ -1,9 +1,12 @@
+//EXPRESS
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+//VARIABLES
+let loginController = require('../controllers/loginController')
 
-module.exports = router;
+//RUTA
+router.get('/', loginController.index);
+
+//EXPORTAR
+module.exports = router
