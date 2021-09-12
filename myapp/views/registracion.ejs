@@ -30,22 +30,32 @@
 
 <body>
     
-    <%- include('./partials/headerDeslogeado') %>
+    <% include('./partials/headerDeslogeado') %>
 
 
     <main>
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
-                <form action="">
+                <h2>Registración</h2>   
+    
+                 <div form action="registracion.ejs" method="GET"> </form> 
                     
-                    <h2>(Formulario de registración)</h2>
+                    <input type="search" name="buscar" value="" class="inputformulario" 
+                        onfocus="search()" placeholder="email">
+                        <button type="submit"> Enter</button>  
+                        <div></div>
+                        <input type="search" name="buscar" value="" class="inputformulario" 
+                        onfocus="search()" placeholder="contrasena">
+                        <button type="submit"> Enter </button> 
+
+
             
                 </form>
             </div>
         </div>
     </main>
 
-       <%- include('./partials/footer')  %> 
+       <% include('./partials/footer')  %> 
 
 
 
