@@ -1,6 +1,10 @@
 const resultadoBusquedaController = {
     index: function(req, res, next) {
-        res.render('resultadoBusqueda', {  });
+      let result = req.query.result;
+        res.render('resultadoBusqueda', {
+          busqueda:result
+
+         });
       }
 }
 
