@@ -3,6 +3,9 @@ footer{
     color: white;
     padding: 0 10px;
 }
+.verdeFondo{
+    background-color: rgb(3, 58, 3);;
+}
 
 footer ul{
     list-style: none;

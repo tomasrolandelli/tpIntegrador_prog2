@@ -7,6 +7,9 @@ header{
     height: 55px;
     padding-top: 10px;
 }
+.verdeFondo{
+    background-color: rgb(3, 58, 3);
+}
 header section{
     height: 100%;
 }
@@ -26,7 +29,7 @@ header a:hover{
     margin: 0px;
 }
 .logo a{
-    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: white;
 }
 .logo a:hover {

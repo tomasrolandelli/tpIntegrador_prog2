@@ -1,6 +1,11 @@
-*{
+body{
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+h1,h2,h3,h4{
+    font-family: 'Oswald', sans-serif !important;
 }
 main{
-    margin-bottom: 40px;
+    background-image: url(https://previews.123rf.com/images/praewpailin/praewpailin2007/praewpailin200700125/151339761-.jpg);
+    background-size: 1000px;
 }
