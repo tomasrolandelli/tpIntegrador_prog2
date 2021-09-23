@@ -1,4 +1,5 @@
 const posts = {
+    
     list: [
         {
             username:'leomessi',
@@ -52,4 +53,6 @@ const posts = {
         },
 
     ]
-}
+};
+
+module.exports = posts
