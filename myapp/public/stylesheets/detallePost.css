@@ -16,6 +16,8 @@ article.detalle-post{
 }
 .comentarios-detalle .info-post img{
     border-radius: 50%;
+    max-width: 46px;
+    max-height: 46px;
 }
 .comentarios-detalle .info-post h3{
     font-size: 14px;
