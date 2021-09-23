@@ -2,7 +2,7 @@ const posts = {
     
     list: [
         {
-            username:'leomessi',
+            username:'Leomessi',
             pie:'Se viene...',
             imagen:'images/messiPost.jpg',
             postId:'1',
@@ -12,7 +12,7 @@ const posts = {
             comment4:'Extraterrestre',
         },
         {
-            username:'cristiano',
+            username:'Cristiano',
             pie:'Same place... Same spirit... New adventure... Lets go, Devils!',
             imagen:'images/cristianoPost.jpg',
             postId:'2',
@@ -22,7 +22,7 @@ const posts = {
             comment4:'Welcome back',
         },
         {
-            username:'neymarjr',
+            username:'Neymarjr',
             pie:'3 pontos importantes. ALLEZ PSG',
             imagen:'images/neymarPost.jpg',
             postId:'3',
@@ -32,7 +32,7 @@ const posts = {
             comment4:'Vamoss!',
         },
         {
-            username:'_rl9',
+            username:'_RL9',
             pie:'Today you can call me Robert LewanGOLDski',
             imagen:'images/lewanPost.jpg',
             postId:'4',
@@ -42,12 +42,12 @@ const posts = {
             comment4:'Congrats',
         },
         {
-            username:'k.mbappe',
+            username:'K.mbappe',
             pie:'Grande victoire à la maison',
             imagen:'images/mbappePost.jpg',
             postId:'5',
             comment1:'Future GOAT',
-            comment2:'Come to Madrid',
+            comment2:'Geniooo',
             comment3:'Bravoo',
             comment4:'Icon',
         },
