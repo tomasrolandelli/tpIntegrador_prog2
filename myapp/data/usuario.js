@@ -42,7 +42,7 @@ const usuario={
             lastName:'Mbappe',
             username:'k.mbappe',
             biografia:'PSG & France. Campeon Mundial 2018.',
-            fotoPerfil:'images/mbappe.jpg',
+            fotoPerfil:'images/mbappe.jpeg',
             idUser:'5',
 
         },

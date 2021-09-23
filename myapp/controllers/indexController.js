@@ -3,10 +3,10 @@ const dataUser = require ('../data/usuario')
 
 const indexController = {
     index: function(req, res, next) {
-        res.render('index', {posts: dataPost.list});
-    },
-    user: function(req, res, next) {
-      res.render('user',{usuario: dataUser.list});
+        res.render('index', {
+          posts: dataPost.list,
+          usuario: dataUser.list
+        });
     },
 }
 
