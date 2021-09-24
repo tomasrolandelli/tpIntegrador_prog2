@@ -9,3 +9,9 @@ main{
     background-image: url(https://previews.123rf.com/images/praewpailin/praewpailin2007/praewpailin200700125/151339761-.jpg);
     background-size: 1000px;
 }
+
+footer{
+    position: absolute;
+    bottom: 1000;
+    width: 100%;
+}
