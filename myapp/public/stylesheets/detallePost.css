@@ -46,6 +46,8 @@ article.detalle-post{
 }
 .comentarios-detalle .lista-comentarios .comentario div img{
     border-radius: 50%;
+    max-width: 46px;
+    max-height: 46px;
 }
 
 .comentarios-detalle .lista-comentarios .comentario h6{
