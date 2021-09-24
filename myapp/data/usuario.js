@@ -8,6 +8,7 @@ const usuario={
             biografia:'Bienvenidos a mi cuenta oficial. Actual jugador del PSG y capitan de la Seleccion Argentina.',
             fotoPerfil:'images/messi.jpeg',
             idUser:'1',
+            imagenes: ['images/messi2.jpg', 'images/messi3.jpg', 'images/messi4.jpg', 'images/messi5.jpg', 'images/messi6.jpg', 'images/messi7.jpg', 'images/messi8.jpg', 'images/messi9.jpg']
 
         },
         {
