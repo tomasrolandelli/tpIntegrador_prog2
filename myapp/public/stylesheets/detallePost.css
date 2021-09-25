@@ -1,5 +1,6 @@
 section.detalle-container{
     border: 1px solid lightgray;
+    margin-top: 10px;
 }
 article.detalle-post{
     border-right: 1px solid lightgray;
@@ -36,7 +37,7 @@ article.detalle-post{
 .comentarios-detalle .agregar-comentario{
     height: 15%;
     padding-left: 5px;
-    width: 50% !important
+    width: 90% 
 }
 
 .comentarios-detalle .lista-comentarios{
