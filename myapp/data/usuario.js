@@ -47,12 +47,7 @@ const usuario={
             idUser:'5',
 
         },
-
-
-
     ]
-
-
 };
 
 module.exports = usuario;

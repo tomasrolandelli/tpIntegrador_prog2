@@ -2,6 +2,7 @@ section.detalle-container{
     border: 1px solid lightgray;
     margin-top: 10px;
 }
+
 article.detalle-post{
     border-right: 1px solid lightgray;
 }
@@ -15,25 +16,30 @@ article.detalle-post{
     border-bottom: 1px solid lightgray;
     padding-left: 5px;
 }
+
 .comentarios-detalle .info-post img{
     border-radius: 50%;
     max-width: 46px;
     max-height: 46px;
 }
+
 .comentarios-detalle .info-post h3{
     font-size: 14px;
     font-weight: bolder;
     margin: 0 0 0 8px;
 }
+
 .comentarios-detalle .lista-comentarios{
     height: 75%;
     padding-left: 5px;
     border-bottom: 1px solid lightgray;
     overflow: scroll;
 }
+
 .comentarios-detalle .lista-comentarios::-webkit-scrollbar{
     display: none;
 }
+
 .comentarios-detalle .agregar-comentario{
     height: 15%;
     padding-left: 5px;
@@ -43,9 +49,11 @@ article.detalle-post{
 .comentarios-detalle .lista-comentarios{
     padding-right: 2px;
 }
+
 .comentarios-detalle .lista-comentarios .comentario .icono-meGusta{
     font-weight: bolder;
 }
+
 .comentarios-detalle .lista-comentarios .comentario div img{
     border-radius: 50%;
     max-width: 46px;
@@ -56,6 +64,7 @@ article.detalle-post{
     font-size: 13px;
     margin-left: 2px !important;
 }
+
 .comentarios-detalle .lista-comentarios .comentario h6 a{
     font-weight: bolder;
     font-size: 15px;
@@ -63,7 +72,3 @@ article.detalle-post{
     text-decoration: none;
     margin-right: 4px !important;
 }
-
-
-
-

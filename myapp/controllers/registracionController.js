@@ -4,8 +4,4 @@ const registracionController = {
       }
 }
 
-
-
-
-
 module.exports = registracionController

@@ -51,7 +51,6 @@ const posts = {
             comment3:'Bravoo',
             comment4:'Icon',
         },
-
     ]
 };
 

@@ -8,6 +8,5 @@ let indexController = require('../controllers/indexController')
 //RUTA
 router.get('/', indexController.index);
 
-
 //EXPORTAR
 module.exports = router;
