@@ -36,6 +36,7 @@ article.detalle-post{
 .comentarios-detalle .agregar-comentario{
     height: 15%;
     padding-left: 5px;
+    width: 50% !important
 }
 
 .comentarios-detalle .lista-comentarios{
@@ -61,9 +62,7 @@ article.detalle-post{
     text-decoration: none;
     margin-right: 4px !important;
 }
-button{
-    width: 50% !important;
-}
+
 
 
 
