@@ -3,7 +3,7 @@ const dataUser = require ('../data/usuario')
 
 const detallePostController = {
     index: function(req, res, next) {
-        res.render('detallePost', {
+        return res.render('detallePost', {
           posts: dataPost.list,
           usuario: dataUser.list
          });

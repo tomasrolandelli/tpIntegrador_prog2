@@ -1,6 +1,6 @@
 const registracionController = {
     index: function(req, res, next) {
-        res.render('registracion', {  });
+        return res.render('registracion', {  });
       }
 }
 

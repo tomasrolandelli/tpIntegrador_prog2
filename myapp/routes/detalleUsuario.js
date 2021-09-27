@@ -6,7 +6,7 @@ var router = express.Router();
 let detalleUsuarioController = require('../controllers/detalleUsuarioController')
 
 //RUTA
-router.get('/', detalleUsuarioController.index);
+router.get('/:id?', detalleUsuarioController.index);
 
 //EXPORTAR
 module.exports = router

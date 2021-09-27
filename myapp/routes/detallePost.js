@@ -6,7 +6,7 @@ var router = express.Router();
 let detallePostController = require('../controllers/detallePostController')
 
 //RUTA
-router.get('/', detallePostController.index);
+router.get('/:id?', detallePostController.index);
 
 //EXPORTAR
 module.exports = router
