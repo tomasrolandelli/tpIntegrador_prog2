@@ -1,6 +1,9 @@
 const db = require('../database/models');
 const post = db.Posteos
 
+const dataPost = require ('../data/posts')
+const dataUser = require ('../data/usuario')
+
 const postController = {
     findAll : function(req, res){
         post.findAll()
@@ -19,6 +22,16 @@ const postController = {
         .catch(error =>{
             return res.send(error)
         })
+    },
+    indexAgregar: function(req, res, next) {
+        return res.render('agregarPost', {  });
+      },
+    indexDetalle: function(req, res, next) {
+        return res.render('detallePost', {
+          posts: dataPost.list,
+          usuario: dataUser.list
+         });
     }
+    
 }
 module.exports = postController

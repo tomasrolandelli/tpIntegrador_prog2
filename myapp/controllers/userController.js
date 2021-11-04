@@ -4,12 +4,27 @@ const dataPost = require ('../data/posts')
 const dataUser = require ('../data/usuario')
 
 const userController = {
-    index: function(req, res, next) {
+    indexDetalle: function(req, res, next) {
         return res.render('detalleUsuario', {
           posts: dataPost.list,
           usuario: dataUser.list
           });
     },
+    indexEditar: function(req, res, next) {
+        return res.render('editarPerfil', {  });
+      },
+      indexMiPerfil: function(req, res, next) {
+        return res.render('miPerfil', {
+          posts: dataPost.list,
+          usuario: dataUser.list
+          });
+      },
+      indexLogin: function(req, res, next) {
+        return res.render('login', {  });
+      },
+      indexRegistracion: function(req, res, next) {
+        return res.render('registracion', {  });
+      },
     findAll : function(req, res){
         usuario.findAll()
         .then(data =>{

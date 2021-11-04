@@ -4,8 +4,18 @@ var router = express.Router();
 
 const postController = require('../controllers/postController')
 
+// PRUEBAS
 router.get('/findAll', postController.findAll)
-router.get('/details/:id', postController.detail)
+router.get('/details', postController.detail)
+
+//PARA VER VISTAS
+router.get('/agregar', postController.indexAgregar)
+router.get('/detalle', postController.indexDetalle)
+
+
+
+
+
 
 
 //EXPORTAR
