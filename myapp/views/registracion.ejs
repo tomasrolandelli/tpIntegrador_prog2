@@ -1,50 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('./partials/head') %> 
+<%- include('./partials/head') %>
 
 
-<body>
-    
-    <%- include('./partials/headerDeslogeado') %>
+    <body>
+
+        <%- include('./partials/headerDeslogeado') %>
 
 
-    <main>
-        <div class="uk-section uk-section-small container">
-            <div class="padi">
-                <h2>Si no tenes una cuenta registrate</h2>  
-            </div> 
-                 <div form action="registracion.ejs" method="GET" class="pi"> </form> 
-                    
-                        <h4> Nombre de usuario </h4><input type="search" name="buscar" value="" class="inputformulario" 
-                        onfocus="search()" placeholder="Ej. Leomessi10">                        
-                        <h4> Email </h4><input type="search" name="buscar" value="" class="inputformulario" 
-                        onfocus="search()" placeholder="Email">  
-                        <h4> Nueva contraseña </h4><input type="search" name="buscar" value="" class="inputformulario" 
-                        onfocus="search()" placeholder="Contrasena"> 
+            <main>
+                <div class="uk-section uk-section-small container">
+                    <div class="padi">
+                        <h2>Si no tenes una cuenta registrate</h2>
+                    </div>
+                    <div>
+                     <form action="/usuario/registracion" method="POST" class="pi">
+
+                        <h4> Nombre de usuario </h4><input type="text" name="name" value="" class="inputformulario"
+                            onfocus="search()" placeholder="Ej. Leomessi10">
+                        <h4> Email </h4><input type="email" name="email" value="" class="inputformulario"
+                            onfocus="search()" placeholder="Email">
+                        <h4> Nueva contraseña </h4><input type="password" name="password" value="" class="inputformulario"
+                            onfocus="search()" placeholder="Contrasena">
+                        <!--
                         <h4>Agrega foto de perfil</h4><input class="form-input" type="file" name="fotoperfil"  class="inputformulario" 
                         onfocus="search()" placeholder="Foto de perfil" accept="image/png">
                         <button type="submit"> Agregar </button>
+                        --->
                         <br>
                         <br>
-                        <button type="submit"> Enter </button> 
+                        <button type="submit"> Enter </button>
                         <br>
                         <br>
                         <br>
                         <br>
-                        
-                        
-
-            
-                </form>
-            </div>
-        </div>
-    </main>
-
-       <%- include('./partials/footer')  %> 
 
 
 
-</body>
+
+                        </form>
+                    </div>
+                </div>
+            </main>
+
+            <%- include('./partials/footer') %>
+
+
+
+    </body>
 
 </html>

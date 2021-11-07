@@ -2,6 +2,7 @@ const db = require('../database/models');
 const usuario = db.Usuario
 const dataPost = require ('../data/posts')
 const dataUser = require ('../data/usuario')
+let bcrypt = require('bcryptjs')
 
 const userController = {
     indexDetalle: function(req, res, next) {
@@ -42,6 +43,22 @@ const userController = {
         .catch(error =>{
             return res.send(error)
         })
+    },
+    register: function(req, res){
+      let passwordEncryptada = bcrypt.hashSync(req.body.password, 10)
+      console.log(passwordEncryptada);
+      db.Usuario.create({
+        name: req.body.name,
+        email: req.body.email,
+        password: passwordEncryptada
+      })
+      .then(user =>{
+        res.redirect('/')
+      })
+      .catch(err=>{
+        console.log(err);
+        res.send(err)
+      })
     }
 }
 module.exports = userController
