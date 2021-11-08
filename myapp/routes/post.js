@@ -14,5 +14,6 @@ router.get('/detalle', postController.indexDetalle)
 
 
 
+
 //EXPORTAR
 module.exports = router
