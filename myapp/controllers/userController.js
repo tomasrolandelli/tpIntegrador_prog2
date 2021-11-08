@@ -1,4 +1,5 @@
 const db = require('../database/models');
+const op = db.Sequelize.Op;
 const usuario = db.Usuario
 const dataPost = require ('../data/posts')
 const dataUser = require ('../data/usuario')
@@ -104,6 +105,18 @@ const userController = {
         res.send(err)
       })
       
+    },
+    search: function(req, res){
+        let search = req.query.result
+        usuario.findAll({
+            where: [{'nombre_usuario': {[op.like]: `%${search}%`}}]
+        })
+        .then(usuario => {
+            return res.send(usuario)
+        })
+        .catch(error =>{
+            return res.send(error)
+        })
     }
 }
 module.exports = userController
