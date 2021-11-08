@@ -31,6 +31,9 @@ const postController = {
           posts: dataPost.list,
           usuario: dataUser.list
          });
+    },
+    postear:function(req, res, next){
+        
     }
     
 }

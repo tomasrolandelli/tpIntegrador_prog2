@@ -20,9 +20,50 @@ const userController = {
           usuario: dataUser.list
           });
       },
-      indexLogin: function(req, res, next) {
-        return res.render('login', {  });
+      login: function(req,res){
+        if(req.session.user == undefined){
+            res.render('login')
+        } else {
+            res.redirect("/")
+        }
       },
+      processLogin: function(req,res){
+
+        let errors = {}
+
+        if(req.body.email == ""){
+            errors.message = "El campo de email no puede estar vacio";
+            res.locals.error = errors;
+            res.render("login");
+        } else {
+
+            db.Usuario.findOne({
+                where : {
+                    email: req.body.email
+                }
+            })
+            .then(user => {
+                if(user != undefined){
+                    let passwordCorrecta = bcrypt.compareSync(req.body.password, user.password)
+                    if(passwordCorrecta == true){
+                        req.session.user = user.email
+                        if(req.body.recordame){
+                            res.cookie("usuarioId", user.id, {maxAge: 1000 * 60 * 30})
+                        }
+                        res.redirect("/")
+                    }else {
+                        res.send("Credenciales invalidas")
+                    }
+    
+                }
+            })
+            .catch(err => {
+                console.log(err);
+                res.send(err)
+            })
+        }
+
+    },
       indexRegistracion: function(req, res, next) {
         return res.render('registracion', {  });
       },
@@ -46,11 +87,14 @@ const userController = {
     },
     register: function(req, res){
       let passwordEncryptada = bcrypt.hashSync(req.body.password, 10)
-      console.log(passwordEncryptada);
+      let date_ob = new Date()
       db.Usuario.create({
-        name: req.body.name,
+        nombre_usuario: req.body.name,
         email: req.body.email,
-        password: passwordEncryptada
+        contrasenia: passwordEncryptada,
+        foto: req.file.filename,
+        fecha: date_ob,
+        numerico: 1,
       })
       .then(user =>{
         res.redirect('/')
@@ -59,6 +103,7 @@ const userController = {
         console.log(err);
         res.send(err)
       })
+      
     }
 }
 module.exports = userController

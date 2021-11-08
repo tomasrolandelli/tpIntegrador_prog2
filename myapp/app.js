@@ -10,7 +10,7 @@ var usuariosRouter = require('./routes/usuarios');
 var postRouter = require('./routes/post');
 var comentarioRouter = require('./routes/comentario');
 
-
+const session = require('express-session')
 
 var app = express();
 
@@ -23,6 +23,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session( { secret: "Nuestro mensaje secreto",
+				resave: false,
+				saveUninitialized: true }));
 
 app.use('/', indexRouter);
 app.use('/resultado-busqueda', resultadoBusquedaRouter);
