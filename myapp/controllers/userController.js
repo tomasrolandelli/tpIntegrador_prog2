@@ -105,18 +105,6 @@ const userController = {
         res.send(err)
       })
       
-    },
-    search: function(req, res){
-        let search = req.query.result
-        usuario.findAll({
-            where: [{'nombre_usuario': {[op.like]: `%${search}%`}}]
-        })
-        .then(usuario => {
-            return res.send(usuario)
-        })
-        .catch(error =>{
-            return res.send(error)
-        })
     }
 }
 module.exports = userController
