@@ -40,8 +40,8 @@ const postController = {
             order: [['fecha', 'DESC'],],
             limit: 10
         })
-        .then(post => {
-            return res.send(post)
+        .then(posteos => {
+            return res.render('resultadoBusqueda', {posteos: posteos})
         })
         .catch(error =>{
             return res.send(error)

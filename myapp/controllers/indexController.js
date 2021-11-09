@@ -17,7 +17,8 @@ const indexController = {
       .catch(error => {
         return res.send(error)
       })
-  }
+  },
+  
 }
 
 module.exports = indexController

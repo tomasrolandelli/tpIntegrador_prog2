@@ -5,7 +5,8 @@ const resultadoBusquedaController = {
           busqueda:result
 
          });
-      }
+      },
+      
 }
 
 module.exports = resultadoBusquedaController
