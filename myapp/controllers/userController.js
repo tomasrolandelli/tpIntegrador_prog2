@@ -21,7 +21,7 @@ const userController = {
           usuario: dataUser.list
           });
       },
-      login: function(req,res){
+      loginIndex: function(req,res){
         if(req.session.user == undefined){
             res.render('login')
         } else {
@@ -45,7 +45,7 @@ const userController = {
             })
             .then(user => {
                 if(user != undefined){
-                    let passwordCorrecta = bcrypt.compareSync(req.body.password, user.password)
+                    let passwordCorrecta = bcrypt.compareSync(req.body.password, user.contrasenia)
                     if(passwordCorrecta == true){
                         req.session.user = user.email
                         if(req.body.recordame){

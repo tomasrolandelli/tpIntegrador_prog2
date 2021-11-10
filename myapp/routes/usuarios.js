@@ -21,7 +21,7 @@ const storage = multer.diskStorage({
 router.get('/detalle', userController.indexDetalle)
 router.get('/editar', userController.indexEditar)
 router.get('/mi-perfil', userController.indexMiPerfil)
-router.get('/login', userController.login)
+router.get('/login', userController.loginIndex)
 router.get('/registracion', userController.indexRegistracion)
 
 //POST

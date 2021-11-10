@@ -5,45 +5,34 @@
     <%- include('./partials/head') %> 
     
 <body>
-    
-    <%- include('./partials/headerDeslogeado') %>
+
+
+    <% if(locals.user != undefined){ %>
+        <%- include('./partials/headerLogeado') %>
+   
+    <%  } else {%>
+        <%- include('./partials/headerDeslogeado') %>
+
+    <% } %>
 
 
     <main>
         <div class="uk-section uk-section-small container">
-
-                <form action="">
                     <div class="log">
                         <h2>Login</h2>
                     </div>   
 
-                    <div> <form action="/usuario/login" method="POST" class="pi">
+                    <div> 
+                        <form action="/usuario/login" method="POST" class="pi">
                         
-                        <h4> Nombre de usuario </h4><input type="text" name="nombre" value="" class="inputformulario" 
-                        onfocus="search()" placeholder="Ej. Leomessi10">
+                        <h4> Email del usuario</h4><input type="email" name="email" value="" class="inputformulario" 
+                        onfocus="search()" placeholder="Ej. Leomessi10@gmail.com">
                         <div></div>
                         <h4> Contraseña </h4><input type="password" name="password" value="" class="inputformulario" 
                         onfocus="search()" placeholder="Contraseña">
                         <br>
                         <br>
                         <button type="submit"> Enter </button> 
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-
-                
-                
                 </form>
                 </div>
         </div>

@@ -4,8 +4,13 @@
     <%- include('./partials/head') %> 
     
 <body>
-    
-    <%- include('./partials/headerlogeado') %>
+    <% if(locals.user != undefined){ %>
+        <%- include('./partials/headerLogeado') %>
+   
+    <%  } else {%>
+        <%- include('./partials/headerDeslogeado') %>
+
+    <% } %>
 
     <main>
         <div class="uk-section uk-section-small container">

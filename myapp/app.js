@@ -24,9 +24,19 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(session( { secret: "Nuestro mensaje secreto",
+app.use(session( { secret: "Si lees esto tenes que darnos un 10",
 				resave: false,
 				saveUninitialized: true }));
+
+
+app.use(function(req,res,next){
+  if(req.session.user != undefined){
+    res.locals.user = req.session.user
+  }else{
+
+  }
+  return next();
+})
 
 app.use('/', indexRouter);
 app.use('/resultado-busqueda', resultadoBusquedaRouter);

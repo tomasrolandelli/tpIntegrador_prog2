@@ -6,8 +6,15 @@
 
     <body>
 
-        <%- include('./partials/headerDeslogeado') %>
 
+        <% if(locals.user != undefined){ %>
+            <%- include('./partials/headerLogeado') %>
+       
+        <%  } else {%>
+            <%- include('./partials/headerDeslogeado') %>
+    
+        <% } %>
+    
 
             <main>
                 <div class="uk-section uk-section-small container">
