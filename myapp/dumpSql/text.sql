@@ -1,3 +1,6 @@
+CREATE DATABASE proyecto_integrador;
+USE proyecto_integrador;
+
 CREATE TABLE usuarios(
 id INT PRIMARY KEY AUTO_INCREMENT,
 nombre_usuario VARCHAR(30) UNIQUE NOT NULL,
