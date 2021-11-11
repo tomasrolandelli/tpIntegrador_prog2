@@ -10,7 +10,12 @@ const indexController = {
         });
     },
     showEjemplo: function(req,res){
-      db.Posteos.findAll()
+      db.Posteos.findAll({
+        include: [
+        {association: "usuario"},
+        {association: "comentarios"}
+        ]
+        })
       .then(posteos => {
         return res.render('index2', {posteos: posteos})
       })

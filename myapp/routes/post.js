@@ -8,6 +8,8 @@ const postController = require('../controllers/postController')
 router.get('/agregar', postController.indexAgregar)
 router.get('/detalle/:id', postController.indexDetalle)
 router.get('/resultadoBusqueda', postController.search)
+router.get('/findAll', postController.findAll)
+
 
 
 

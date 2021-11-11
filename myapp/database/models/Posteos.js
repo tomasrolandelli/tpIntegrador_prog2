@@ -32,18 +32,18 @@ module.exports = function(sequelize, dataTypes){
 
     const Posteo = sequelize.define(alias, cols, config)
 
+    
     Posteo.associate = function(models){
         Posteo.belongsTo(models.Usuario, {
             as: "usuario",
             foreignKey: "userId"
-        })
-    },
-    Posteo.associate = function(models){
+        });
         Posteo.hasMany(models.Comentarios, {
             as: "comentarios",
             foreignKey: "postId"
         })
     }
+    
 
     return Posteo
 
