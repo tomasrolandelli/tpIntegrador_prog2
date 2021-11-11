@@ -4,7 +4,12 @@ const op = db.Sequelize.Op;
 
 const postController = {
     findAll : function(req, res){
-        post.findAll()
+        post.findAll({
+            include: [
+            {association: "usuario"},
+            {association: "comentarios"}
+            ]
+            })
         .then(data =>{
             return res.send(data)
         })

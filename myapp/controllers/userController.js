@@ -69,7 +69,11 @@ const userController = {
         return res.render('registracion', {  });
       },
     findAll : function(req, res){
-        usuario.findAll()
+        usuario.findAll({
+            include: [
+            {association: "posteo"}
+            ]
+            })
         .then(data =>{
             return res.send(data)
         })
