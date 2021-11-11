@@ -1,16 +1,25 @@
 const db = require('../database/models');
 const op = db.Sequelize.Op;
-const usuario = db.Usuario
+const usuario = db.Usuario;
+const post = db.Posteos;
 const dataPost = require ('../data/posts')
 const dataUser = require ('../data/usuario')
 let bcrypt = require('bcryptjs')
 
 const userController = {
     indexDetalle: function(req, res, next) {
-        return res.render('detalleUsuario', {
-          posts: dataPost.list,
-          usuario: dataUser.list
-          });
+        post.findAll({
+            include: [
+            {association: "usuario"},
+            {association: "comentarios"}
+            ]
+            })
+        .then(posteos =>{
+            return res.render('detalleUsuario', {posteos: posteos} )
+        })
+        .catch(error =>{
+            return res.send(error)
+        })
     },
     indexEditar: function(req, res, next) {
         return res.render('editarPerfil', {  });

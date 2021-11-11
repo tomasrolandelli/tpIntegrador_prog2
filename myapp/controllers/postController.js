@@ -21,9 +21,14 @@ const postController = {
         return res.render('agregarPost', {  });
       },
     indexDetalle: function(req, res, next) {
-        post.findByPk(req.params.id)
-        .then(post =>{
-            return res.send(post)
+        post.findByPk(req.params.id, {
+            include: [
+            {association: "usuario"},
+            {association: "comentarios"}
+            ]
+            })
+        .then(posteos =>{
+            return res.render('detallePost', {posteos: posteos})
         })
         .catch(error =>{
             return res.send(error)
@@ -34,7 +39,11 @@ const postController = {
         post.findAll({
             where: [{'description': {[op.like]: `%${search}%`}}],
             order: [['fecha', 'DESC'],],
-            limit: 10
+            limit: 10,
+            include: [
+        {association: "usuario"},
+        {association: "comentarios"}
+        ]
         })
         .then(posteos => {
             return res.render('resultadoBusqueda', {posteos: posteos})

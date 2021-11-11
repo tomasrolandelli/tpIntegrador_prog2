@@ -3,13 +3,7 @@ const dataUser = require ('../data/usuario')
 const db = require('../database/models')
 
 const indexController = {
-    index: function(req, res, next) {
-        return res.render('index', {
-          posts: dataPost.list,
-          usuario: dataUser.list
-        });
-    },
-    showEjemplo: function(req,res){
+    index: function(req,res){
       db.Posteos.findAll({
         include: [
         {association: "usuario"},
@@ -17,7 +11,7 @@ const indexController = {
         ]
         })
       .then(posteos => {
-        return res.render('index2', {posteos: posteos})
+        return res.render('index', {posteos: posteos})
       })
       .catch(error => {
         return res.send(error)
