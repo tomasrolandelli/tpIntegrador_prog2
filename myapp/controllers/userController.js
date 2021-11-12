@@ -99,6 +99,13 @@ const userController = {
             return res.send(error)
         })
     },
+    logout: function(req, res){
+
+        req.session.destroy()
+        res.clearCookie("usuarioId");
+
+        res.redirect("/user/login")
+    },
     register: function(req, res){
       let passwordEncryptada = bcrypt.hashSync(req.body.password, 10)
       let date_ob = new Date()

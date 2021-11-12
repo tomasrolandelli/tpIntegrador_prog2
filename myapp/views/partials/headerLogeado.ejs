@@ -8,7 +8,13 @@
                 <div class="uk-navbar-center">
                     <ul class="uk-flex uk-flex-between uk-flex-middle">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/usuario/login">Logout</a></li>
+                        <li>
+                            <form action="/usuario/logout" method="POST">
+                                <button>
+                                    Cerrar sesión
+                                </button>
+                            </form>
+                        </li>
                         <l1>Bienvenido <%= locals.user%></l1>
                     </ul>
                 </div>

@@ -27,6 +27,8 @@ router.get('/registracion', userController.indexRegistracion)
 //POST
 router.post('/registracion',upload.single('fotoperfil'), userController.register)
 router.post('/login',userController.processLogin)
+router.post('/logout',userController.logout)
+
 
 
 
