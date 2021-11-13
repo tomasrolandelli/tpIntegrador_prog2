@@ -26,14 +26,14 @@ const postController = {
 
 //Detalle del post
     indexDetalle: function(req, res, next) {
-        post.findAll({
+        post.findByPk(req.params.id, {
             include: [
             {association: "usuario"},
             {association: "comentarios"}
             ]
             })
-        .then(posteos =>{
-            return res.render('detallePost', {posteos: posteos})
+        .then(posteo =>{
+            return res.render('detallePost', {posteo: posteo})
         })
         .catch(error =>{
             return res.send(error)

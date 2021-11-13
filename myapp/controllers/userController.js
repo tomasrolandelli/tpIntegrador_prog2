@@ -9,14 +9,13 @@ let bcrypt = require('bcryptjs')
 //Detalle de usuario
 const userController = {
     indexDetalle: function(req, res, next) {
-        post.findAll({
+        usuario.findByPk(req.params.id,{
             include: [
-            {association: "usuario"},
-            {association: "comentarios"}
+            {association: "posteo"},
             ]
             })
-        .then(posteos =>{
-            return res.render('detalleUsuario', {posteos: posteos} )
+        .then(usuario =>{
+            return res.render('detalleUsuario', {usuario: usuario} )
         })
         .catch(error =>{
             return res.send(error)
@@ -118,7 +117,7 @@ const userController = {
         req.session.destroy()
         res.clearCookie("usuarioId");
 
-        res.redirect("/user/login")
+        res.redirect("/usuario/login")
     },
 
 //Registracion

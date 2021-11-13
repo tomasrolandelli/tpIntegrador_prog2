@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
   const upload = multer({ storage: storage })
 
 //RUTA
-router.get('/detalle', userController.indexDetalle)
+router.get('/detalle/:id', userController.indexDetalle)
 router.get('/editar', userController.indexEditar)
 router.get('/mi-perfil', userController.indexMiPerfil)
 router.get('/login', userController.loginIndex)

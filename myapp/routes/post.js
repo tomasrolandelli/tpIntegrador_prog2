@@ -5,11 +5,14 @@ var router = express.Router();
 //VARIABLES
 const postController = require('../controllers/postController')
 
-//RUTA
+//RUTA GET
 router.get('/agregar', postController.indexAgregar)
-router.get('/detalle', postController.indexDetalle)
+router.get('/detalle/:id', postController.indexDetalle)
 router.get('/resultadoBusqueda', postController.search)
 router.get('/findAll', postController.findAll)
+
+
+
 
 
 
