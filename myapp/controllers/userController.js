@@ -6,6 +6,7 @@ const dataPost = require ('../data/posts')
 const dataUser = require ('../data/usuario')
 let bcrypt = require('bcryptjs')
 
+//Detalle de usuario
 const userController = {
     indexDetalle: function(req, res, next) {
         post.findAll({
@@ -21,15 +22,21 @@ const userController = {
             return res.send(error)
         })
     },
+
+//Editar perfil
     indexEditar: function(req, res, next) {
         return res.render('editarPerfil', {  });
       },
+
+//Mi perfil
       indexMiPerfil: function(req, res, next) {
         return res.render('miPerfil', {
           posts: dataPost.list,
           usuario: dataUser.list
           });
       },
+
+//Login
       loginIndex: function(req,res){
         if(req.session.user == undefined){
             res.render('login')
@@ -37,6 +44,8 @@ const userController = {
             res.redirect("/")
         }
       },
+
+//Login
       processLogin: function(req,res){
 
         let errors = {}
@@ -46,7 +55,6 @@ const userController = {
             res.locals.error = errors;
             res.render("login");
         } else {
-
             db.Usuario.findOne({
                 where : {
                     email: req.body.email
@@ -64,19 +72,21 @@ const userController = {
                     }else {
                         res.send("Credenciales invalidas")
                     }
-    
                 }
             })
             .catch(err => {
                 console.log(err);
                 res.send(err)
             })
-        }
+         }
+      },
 
-    },
+//Registracion
       indexRegistracion: function(req, res, next) {
         return res.render('registracion', {  });
       },
+
+//FindAll de posteos
     findAll : function(req, res){
         usuario.findAll({
             include: [
@@ -90,6 +100,8 @@ const userController = {
             return res.send(error)
         })
     },
+
+//FindByPk de posteos
     detail : function(req, res){
         usuario.findByPk(req.params.id)
         .then(usuario =>{
@@ -99,6 +111,8 @@ const userController = {
             return res.send(error)
         })
     },
+
+//Logout
     logout: function(req, res){
 
         req.session.destroy()
@@ -106,6 +120,8 @@ const userController = {
 
         res.redirect("/user/login")
     },
+
+//Registracion
     register: function(req, res){
       let passwordEncryptada = bcrypt.hashSync(req.body.password, 10)
       let date_ob = new Date()

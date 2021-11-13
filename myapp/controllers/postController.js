@@ -2,6 +2,7 @@ const db = require('../database/models');
 const post = db.Posteos
 const op = db.Sequelize.Op;
 
+//FindAll de posteos
 const postController = {
     findAll : function(req, res){
         post.findAll({
@@ -17,11 +18,15 @@ const postController = {
             return res.send(error)
         })
     },
+
+//Agregar post
     indexAgregar: function(req, res, next) {
         return res.render('agregarPost', {  });
-      },
+    },
+
+//Detalle del post
     indexDetalle: function(req, res, next) {
-        post.findByPk(req.params.id, {
+        post.findAll({
             include: [
             {association: "usuario"},
             {association: "comentarios"}
@@ -34,6 +39,8 @@ const postController = {
             return res.send(error)
         })
     },
+
+//Buscar post por descripcion
     search: function(req, res){
         let search = req.query.result
         post.findAll({
@@ -52,6 +59,5 @@ const postController = {
             return res.send(error)
         })
     }
-    
 }
 module.exports = postController

@@ -1,7 +1,6 @@
-const dataPost = require ('../data/posts')
-const dataUser = require ('../data/usuario')
 const db = require('../database/models')
 
+//FindAll de toda la info
 const indexController = {
     index: function(req,res){
       db.Posteos.findAll({
@@ -17,7 +16,5 @@ const indexController = {
         return res.send(error)
       })
   },
-  
 }
-
 module.exports = indexController

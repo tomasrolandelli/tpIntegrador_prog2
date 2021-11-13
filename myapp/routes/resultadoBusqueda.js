@@ -8,5 +8,7 @@ let resultadoBusquedaController = require('../controllers/resultadoBusquedaContr
 //RUTA
 router.get('/', resultadoBusquedaController.index);
 
+
+
 //EXPORTAR
 module.exports = router
