@@ -89,7 +89,10 @@ const postController = {
         ]
         })
         .then(posteos => {
-            return res.render('resultadoBusqueda', {posteos: posteos})
+            return res.render('resultadoBusqueda', {
+                posteos: posteos,
+                resultado: search
+            })
         })
         .catch(error =>{
             return res.send(error)
