@@ -1,5 +1,6 @@
 const db = require('../database/models')
 
+
 //FindAll de toda la info
 const indexController = {
     index: function(req,res){
