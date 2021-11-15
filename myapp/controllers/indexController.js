@@ -10,7 +10,8 @@ const indexController = {
             all: true,
             nested: true
         }
-        ]
+        ],
+        order: [['fecha', 'DESC'],]
         })
       .then(posteos => {
         return res.render('index', {posteos: posteos})
