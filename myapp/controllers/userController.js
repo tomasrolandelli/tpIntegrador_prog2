@@ -29,10 +29,17 @@ const userController = {
 
 //Mi perfil
       indexMiPerfil: function(req, res, next) {
-        return res.render('miPerfil', {
-          posts: dataPost.list,
-          usuario: dataUser.list
-          });
+        usuario.findByPk(req.session.user.id,{
+            include: [
+            {association: "posteo"},
+            ]
+            })
+        .then(usuario =>{
+            return res.render('miPerfil', {usuario: usuario} )
+        })
+        .catch(error =>{
+            return res.send(error)
+        })
       },
 
 //Login

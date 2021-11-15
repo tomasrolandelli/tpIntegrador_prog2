@@ -44,6 +44,10 @@ module.exports = function(sequelize, dataTypes){
         Usuario.hasMany(models.Posteos, {
             as: "posteo",
             foreignKey: "userId"
+        });
+        Usuario.hasMany(models.Comentarios, {
+            as: "comentariosU",
+            foreignKey: "userId"
         })
     }
     

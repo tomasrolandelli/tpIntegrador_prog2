@@ -22,16 +22,16 @@
             <div class="uk-container uk-container-small uk-card-default">
                 <section class="info-usuario uk-flex uk-flex-around uk-width-1-1">
                     <div class="uk-width-1-3 uk-flex uk-flex-center uk-flex-middle">
-                        <img src="<%=usuario[0].fotoPerfil%>" alt="foto de perfil" class="foto-perfil">
+                        <img src="/images/<%=usuario.foto%>" alt="foto de perfil" class="foto-perfil">
                     </div>
                     <div class="uk-width-2-3 uk-flex uk-flex-column uk-flex-around">
                         <div class="uk-flex uk-flex-middle">
-                            <h3 class="uk-margin-remove"><% posts[0].username%></h3>
+                            <h3 class="uk-margin-remove"><%=usuario.nombre_usuario%></h3>
                             <a href="/editar-perfil" uk-icon="icon:cog; ratio: 1.2" class="uk-margin-left"></a>
                         </div>
                         <div>
                             <ul class="red-usuario uk-flex uk-flex-between uk-width-1-2">
-                                <li><%=usuario[0].postsCant %> posts</li>
+                                <li>3 posts</li>
                                 <li>230M seguidores</li>
                                 <li>355 seguidos</li>
                             </ul>
@@ -41,11 +41,11 @@
                 </section>
                 <section class="muro uk-flex uk-flex-middle uk-flex-center">
                     <div class="uk-grid uk-child-width-1-3 uk-width-1-1 uk-margin-remove" uk-grid>
-                        <% for(let i=0; i<posts.length; i++){ %>
+                        <% for(let i=0; i<usuario.posteo.length; i++){ %>
                         <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="/post/detalle" class="link-detalle">
-                                <img src="../<%=usuario[0].imagenes[i]%>" alt="foto de perfil" class="foto-perfil">
-                                <p class="uk-text-center"><%=posts[i].pie%></p>
+                            <a href="/post/detalle/<%= usuario.posteo[i].id%>" class="link-detalle">
+                                <img src="../<%= usuario.posteo[i].foto%>" alt="foto" class="foto-perfil">
+                                <p class="uk-text-center"><%= usuario.posteo[i].description%></p>
                             </a>
                         </div>
                         <% } %>

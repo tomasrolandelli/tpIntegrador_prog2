@@ -28,8 +28,10 @@ const postController = {
     indexDetalle: function(req, res, next) {
         post.findByPk(req.params.id, {
             include: [
-            {association: "usuario"},
-            {association: "comentarios"}
+            {
+                all: true,
+                nested: true
+            }
             ]
             })
         .then(posteo =>{

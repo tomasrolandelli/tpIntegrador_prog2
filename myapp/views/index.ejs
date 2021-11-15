@@ -49,10 +49,12 @@
                             <div class="post-comentarios">
                                 <h6>Comentarios</h6>
                                 <ul>
+                                    <% for (let j = 0; j < posteos[i].comentarios.length; j++){ %> 
                                     <li>
-                                        <a href="/usuario/detalle/<%=posteos[i].usuario.id%>"><%=posteos[i].usuario.nombre_usuario%></a>
-                                        <p><%=posteos[i].comentarios[0].comentario%></p>
+                                        <a href="/usuario/detalle/<%=posteos[i].comentarios[j].userId%>"><%=posteos[i].comentarios[j].usuarioU.nombre_usuario%></a>
+                                        <p><%=posteos[i].comentarios[j].comentario%></p>
                                     </li>
+                                    <% } %> 
                                     <a href="">Ver más...</a>
                                 </ul>
                             </div>

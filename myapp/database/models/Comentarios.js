@@ -37,6 +37,10 @@ module.exports = function(sequelize, dataTypes){
         Comentario.belongsTo(models.Posteos, {
             as: "posteos",
             foreignKey: "postId"
+        });
+        Comentario.belongsTo(models.Usuario, {
+            as: "usuarioU",
+            foreignKey: "userId"
         })
     }
 
