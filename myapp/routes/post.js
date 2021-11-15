@@ -27,7 +27,7 @@ router.get('/findAll', postController.findAll)
 
 //ruta POST
 router.post('/new', upload.single('fotopost'), postController.new)
-router.post('/borrar', postController.borrar)
+router.post('/borrar/:id', postController.borrar)
 
 
 
