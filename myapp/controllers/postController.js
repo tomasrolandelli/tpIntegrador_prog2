@@ -42,6 +42,20 @@ const postController = {
                 res.send(err)
         
         } )
+    }, 
+
+    //Borrar post 
+    borrar: function(req, res) {
+        let id = req.params.id
+        post.destroy({
+            where: {
+                id: id
+            }
+        })
+        .then(post => {
+            res.redirect('/usuario/mi-perfil')
+        })
+
     },
 
 //Detalle del post

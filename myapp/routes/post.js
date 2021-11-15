@@ -26,7 +26,9 @@ router.get('/resultadoBusqueda', postController.search)
 router.get('/findAll', postController.findAll)
 
 //ruta POST
-router.post('/new', upload.single('fotoperfil'), postController.new)
+router.post('/new', upload.single('fotopost'), postController.new)
+router.post('/borrar', postController.borrar)
+
 
 
 

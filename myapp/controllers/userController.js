@@ -11,13 +11,15 @@ const userController = {
     indexDetalle: function(req, res, next) {
         usuario.findByPk(req.params.id,{
             include: [
-            {association: "posteo"},
-            ]
+            {association: "posteo", order: [[db.Posteo,'fecha', 'DESC']]}
+            ],
+            
             })
         .then(usuario =>{
             return res.render('detalleUsuario', {usuario: usuario} )
         })
-        .catch(error =>{
+        .catch(error =>{ 
+            console.log(error)
             return res.send(error)
         })
     },

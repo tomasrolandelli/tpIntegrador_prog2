@@ -30,6 +30,8 @@ app.use(session( { secret: "Si lees esto tenes que darnos un 10",
 
 
 app.use(function(req,res,next){
+  res.locals.user=null
+
   if(req.session.user != undefined){
     res.locals.user = req.session.user
   }else{

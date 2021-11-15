@@ -44,7 +44,16 @@
                               <input type="text" name="comentario" class="uk-input" placeholder="Agregar comentario"> 
                               <button class="uk-button uk-button-primary uk-margin-small-top" type="submit">Comentar</button>
                             </form>
-                        </div>
+                            <% if(locals.user != undefined){ %>
+                            <% if(locals.user.id == posteo.usuario.id){ %>
+                                <form action="/post/borrar/<%=posteo.id%>" method="POST" class="uk-text-center">
+                                    <button class="uk-button uk-button-primary uk-margin-small-top" type="submit">BORRAR POST</button>   
+                                </form>
+                            <%  } %>
+                           
+                            <%  } %>
+
+                    </div>
                     </article>
                 </section>
             </div>
