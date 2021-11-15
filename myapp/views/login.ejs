@@ -21,13 +21,14 @@
                     <div class="log">
                         <h2>Login</h2>
                     </div>   
-
                     <div> 
                         <form action="/usuario/login" method="POST" class="pi">
-                        
                         <h4> Email del usuario</h4><input type="email" name="email" value="" class="inputformulario" 
                         onfocus="search()" placeholder="Ej. Leomessi10@gmail.com">
                         <div></div>
+                        <% if(locals.error != undefined) {  %> 
+                            <p><%= error.message  %> </p>
+                        <% } %> 
                         <h4> Contraseña </h4><input type="password" name="password" value="" class="inputformulario" 
                         onfocus="search()" placeholder="Contraseña">
                         <br>

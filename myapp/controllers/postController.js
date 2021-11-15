@@ -66,7 +66,7 @@ const postController = {
                 all: true,
                 nested: true
             }
-            ]
+            ],
             })
         .then(posteo =>{
             return res.render('detallePost', {posteo: posteo})
@@ -84,9 +84,11 @@ const postController = {
             order: [['fecha', 'DESC'],],
             limit: 10,
             include: [
-        {association: "usuario"},
-        {association: "comentarios"}
-        ]
+          {
+            all: true,
+            nested: true
+        }
+        ],
         })
         .then(posteos => {
             return res.render('resultadoBusqueda', {
