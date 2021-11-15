@@ -24,6 +24,26 @@ const postController = {
         return res.render('agregarPost', {  });
     },
 
+//new 
+    new: function(req, res, next) {
+        let date_ob = new Date()
+        post.create({
+            userId: req.session.user.id, 
+            foto: req.file.filename, 
+            description: req.body.pie, 
+            fecha: date_ob,
+        }) 
+        .then(post => {
+            res.redirect('/usuario/mi-perfil')
+            
+        }) .catch(
+            err=>{
+                console.log(err);
+                res.send(err)
+        
+        } )
+    },
+
 //Detalle del post
     indexDetalle: function(req, res, next) {
         post.findByPk(req.params.id, {

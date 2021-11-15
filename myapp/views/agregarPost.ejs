@@ -14,14 +14,15 @@
 
     <main>
         <div class="uk-section uk-section-small container">
-                <form action="/post/new" class="pi">
+                <form method="post" action="/post/new" class="pi" enctype="multipart/form-data"
+                >
                     <h2 class="pad">Agrega un post</h2>
 
-                    <input class="form-input" type="file" name="fotoperfil"  class="inputformulario" 
+                    <input class="form-input" type="file" name="fotopost"  class="inputformulario" 
                     onfocus="search()" placeholder="foto de perfil" accept="image/png">
                     <button type="submit"> Agregar </button> 
                     <h4>Pie de foto </h4>
-                    <input type="text" name="buscar" value="" class="inputformulario" onfocus="search()" placeholder="Escribe algo aquí..."> 
+                    <input type="text" name="pie" value="" class="inputformulario" onfocus="search()" placeholder="Escribe algo aquí..."> 
                     <br>
                     <br>
                     <button type="submit"> Publicar </button> 
