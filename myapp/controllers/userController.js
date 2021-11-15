@@ -63,7 +63,7 @@ const userController = {
                 if(user != undefined){
                     let passwordCorrecta = bcrypt.compareSync(req.body.password, user.contrasenia)
                     if(passwordCorrecta == true){
-                        req.session.user = user.email
+                        req.session.user = user
                         if(req.body.recordame){
                             res.cookie("usuarioId", user.id, {maxAge: 1000 * 60 * 30})
                         }
