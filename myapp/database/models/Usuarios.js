@@ -27,7 +27,10 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.DATE,
         },
         numerico:{
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
+        },
+        fecha_de_nacimiento:{
+            type: dataTypes.DATE,
         }
     }
     

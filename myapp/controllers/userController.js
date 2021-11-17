@@ -140,6 +140,7 @@ const userController = {
         foto: req.file.filename,
         fecha: date_ob,
         numerico: 1,
+        fecha_de_nacimiento: req.body.date_ob,
       })
       .then(user =>{
         res.redirect('/')
