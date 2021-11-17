@@ -92,7 +92,8 @@ const userController = {
 //Registracion
       indexRegistracion: function(req, res, next) {
         return res.render('registracion', {  });
-      },
+        
+    },
 
 //FindAll de posteos
     findAll : function(req, res){
@@ -131,6 +132,25 @@ const userController = {
 
 //Registracion
     register: function(req, res){
+
+        let errors = {};
+        let errorscontrasenia = {}
+        if(req.body.email == "") {
+          errors.message = "El email no puede estar vacío.";
+          res.locals.error = errors;
+          return res.render('registracion'); 
+        } 
+        else if(passwordEncryptada == "") {
+            errorscontrasenia.message = "La contraseña no puede estar vacía.";
+            res.locals.error = errorscontrasenia; 
+            return res.render('registracion');
+
+        }
+        
+        else {
+    
+
+
       let passwordEncryptada = bcrypt.hashSync(req.body.password, 10)
       let date_ob = new Date()
       db.Usuario.create({
@@ -140,7 +160,7 @@ const userController = {
         foto: req.file.filename,
         fecha: date_ob,
         numerico: 1,
-        fecha_de_nacimiento: req.body.date_ob,
+        fecha_de_nacimiento: req.body.date,
       })
       .then(user =>{
         res.redirect('/')
@@ -151,5 +171,6 @@ const userController = {
       })
       
     }
+}
 }
 module.exports = userController

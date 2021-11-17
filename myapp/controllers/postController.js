@@ -57,6 +57,23 @@ const postController = {
 
     },
 
+    //Editar post
+
+    editar: function(req, res) {
+        let id = req.params.id
+        post.update({
+            description: req.body.pie,
+        }, 
+        {where: {
+                id: id
+            }
+        })
+        .then(post => {
+            res.redirect('/usuario/mi-perfil')
+        })
+
+    },
+
 //Detalle del post
     indexDetalle: function(req, res, next) {
         post.findByPk(req.params.id, {

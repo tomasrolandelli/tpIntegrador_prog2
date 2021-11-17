@@ -33,10 +33,20 @@
                         <h4> Email </h4>
                         <input type="email" name="email" value="" class="inputformulario"
                             onfocus="search()" placeholder="Email">
+                        
+                         <% if(locals.error != undefined){ %>
+                        <p ><%=error.message%></p>
+                        <% }  %>
+                        }
                         <h4> Nueva contraseña </h4>
                         <input type="password" name="password" value="" class="inputformulario"
                             onfocus="search()" placeholder="Contrasena">
                         
+                        <% if(locals.errorscontrasenia != undefined){ %>
+                            <p ><%=errorscontrasenia.message%></p>
+                            <% }  %>
+        
+
                         <h4>Agrega foto de perfil</h4>
                         <input class="form-input" type="file" name="fotoperfil"  class="inputformulario" 
                         onfocus="search()" placeholder="Foto de perfil" accept="image/png">
