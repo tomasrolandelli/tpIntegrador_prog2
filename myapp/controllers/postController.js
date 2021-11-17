@@ -1,4 +1,4 @@
-const db = require('../database/models');
+const db = require('../database/models/index.js');
 const post = db.Posteos
 const op = db.Sequelize.Op;
 
@@ -8,8 +8,7 @@ const postController = {
         post.findAll({
             include: [
             {association: "usuario"},
-            {association: "comentarios"}
-            ]
+            {association: "comentarios"}]
             })
         .then(data =>{
             return res.send(data)
