@@ -30,7 +30,7 @@ router.get('/editar/:id', postController.indexEditar)
 //ruta POST
 router.post('/new', upload.single('fotopost'), postController.new)
 router.post('/borrar/:id', postController.borrar)
-router.post('/editar', postController.editar)
+router.post('/editar/:id', upload.single('fotoedit'), postController.editar)
 
 
 

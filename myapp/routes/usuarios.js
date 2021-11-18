@@ -19,7 +19,7 @@ const storage = multer.diskStorage({
 
 //RUTA
 router.get('/detalle/:id', userController.indexDetalle)
-router.get('/editar', userController.indexEditar)
+router.get('/editar/:id', userController.indexEditar)
 router.get('/mi-perfil', userController.indexMiPerfil)
 router.get('/login', userController.loginIndex)
 router.get('/registracion', userController.indexRegistracion)
@@ -28,6 +28,9 @@ router.get('/registracion', userController.indexRegistracion)
 router.post('/registracion',upload.single('fotoperfil'), userController.register)
 router.post('/login',userController.processLogin)
 router.post('/logout',userController.logout)
+router.post('/ejecutaredit/:id',upload.single('fotoperfilnueva'), userController.editar)
+
+
 
 //PRUEBA
 router.get('/findAll', userController.findAll)

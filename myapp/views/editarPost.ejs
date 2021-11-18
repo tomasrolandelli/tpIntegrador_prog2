@@ -14,18 +14,18 @@
 
     <main>
         <div class="uk-section uk-section-small container">
-                <form method="post" action="/post/new" class="pi" enctype="multipart/form-data"
+                <form method="post" action="/post/editar/<%= posteo.id %> " class="pi" enctype="multipart/form-data"
                 >
-                    <h2 class="pad">Editar un post</h2>
-
-                    <input class="form-input" type="file" name="fotopost"  class="inputformulario" 
-                     placeholder="foto de post" accept="image/png">
+                    <h2 class="pad">Editar tu posteo:</h2>
+                    <h4>Ingrese su nueva imagen</h4>
+                    <input class="form-input" type="file" name="fotoedit"  class="inputformulario" 
+                     placeholder="foto de post" accept="image/png" enctype="multipart/form-data">
                      
-                    <h4>Pie de foto </h4>
+                    <h4>Nuevo pie de foto: </h4>
                     <input type="text" name="pie" value="<%= posteo.description %> " class="inputformulario" onfocus="search()" placeholder="Escribe algo aquí..."> 
                     <br>
                     <br>
-                    <button type="submit"> Publicar </button> 
+                    <button type="submit"> Editar </button> 
 
                     
                     <br>

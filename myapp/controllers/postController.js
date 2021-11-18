@@ -25,11 +25,14 @@ const postController = {
     },
 //EDITAR POST
     indexEditar: function(req, res, next) {
-        post.findByPk(req.params.id,)
-        .then(posteo =>{
-            return res.render('editarPost', {posteo: posteo});
-  
-        })
+        if(req.session.user != undefined){
+            post.findByPk(req.params.id,)
+            .then(posteo =>{
+                return res.render('editarPost', {posteo: posteo});
+            })  
+        } else {
+            res.redirect("/usuario/login")
+        }
         },
 
 //new 
@@ -69,18 +72,21 @@ const postController = {
     //Editar post
 
     editar: function(req, res) {
-        let id = req.params.id
         post.update({
             description: req.body.pie,
             foto: req.file.filename,
 
         }, 
         {where: {
-                id: id
+                id: req.params.id
             }
         })
         .then(post => {
-            res.redirect('/post/detalle/' + id)
+            res.redirect('/usuario/mi-perfil')
+        })
+        .catch(error =>{
+            console.log(error);
+            return res.send(error)
         })
 
     },

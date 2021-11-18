@@ -22,10 +22,37 @@ const userController = {
         })
     },
 
-//Editar perfil
-    indexEditar: function(req, res, next) {
-        return res.render('editarPerfil', {  });
-      },
+//visualizar editar perfil ejs
+indexEditar: function(req, res, next) {
+    if(req.session.user != undefined){
+        usuario.findByPk(req.params.id,)
+        .then(usuario =>{
+            return res.render('editarPerfil', {usuario: usuario});
+        })  
+    } else {
+        res.redirect("/usuario/login")
+    }
+    },
+//editar perfil
+editar:function(req,res){
+    let passwordEncryptada = bcrypt.hashSync(req.body.password, 10)
+    usuario.update({
+        nombre_usuario: req.body.nombre,
+        email: req.body.email,
+        contrasenia: passwordEncryptada,
+        foto: req.file.filename
+    }, 
+    {where: {
+            id: req.params.id
+        }
+    }).then(res.redirect('/usuario/mi-perfil'))
+    .catch(error =>{
+        console.log(
+            error
+        );
+        res.send(error)
+    })
+},
 
 //Mi perfil
       indexMiPerfil: function(req, res, next) {
