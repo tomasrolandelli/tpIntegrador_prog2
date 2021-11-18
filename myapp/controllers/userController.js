@@ -54,11 +54,16 @@ const userController = {
       processLogin: function(req,res){
 
         let errors = {}
+        let errorscontrasenia = {}
 
         if(req.body.email == ""){
             errors.message = "El campo de email no puede estar vacio";
             res.locals.error = errors;
             res.render("login");
+        }else if(req.body.password.length < 2) {
+            errorscontrasenia.message = "La contraseña debe tener al menos 3 caracteres";
+            res.locals.error = errorscontrasenia; 
+            return res.render('login');
         } else {
             db.Usuario.findOne({
                 where : {
@@ -152,6 +157,7 @@ const userController = {
         fecha: date_ob,
         numerico: 1,
         fecha_de_nacimiento: req.body.date,
+        update_at: null
       })
       .then(user =>{
         res.redirect('/')

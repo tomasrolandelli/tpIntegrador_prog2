@@ -31,6 +31,9 @@ module.exports = function(sequelize, dataTypes){
         },
         fecha_de_nacimiento:{
             type: dataTypes.DATE,
+        },
+        update_at:{
+            type: dataTypes.DATE
         }
     }
     
