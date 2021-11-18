@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head') %> 
+    
+<body>
+    <% if(locals.user != undefined){ %>
+        <%- include('./partials/headerLogeado') %>
+   
+    <%  } else {%>
+        <%- include('./partials/headerDeslogeado') %>
+
+    <% } %>
+
+    <main>
+        <div class="uk-section uk-section-small container">
+                <form method="post" action="/post/new" class="pi" enctype="multipart/form-data"
+                >
+                    <h2 class="pad">Editar un post</h2>
+
+                    <input class="form-input" type="file" name="fotopost"  class="inputformulario" 
+                     placeholder="foto de post" accept="image/png">
+                     
+                    <h4>Pie de foto </h4>
+                    <input type="text" name="pie" value="<%= posteo.description %> " class="inputformulario" onfocus="search()" placeholder="Escribe algo aquí..."> 
+                    <br>
+                    <br>
+                    <button type="submit"> Publicar </button> 
+
+                    
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    
+
+                </form>
+
+            </div>
+        </div>
+    </main>
+    
+       <%- include('./partials/footer')  %> 
+
+</body>
+
+</html>

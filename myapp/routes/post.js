@@ -24,10 +24,13 @@ router.get('/agregar',  postController.indexAgregar)
 router.get('/detalle/:id', postController.indexDetalle)
 router.get('/resultadoBusqueda', postController.search)
 router.get('/findAll', postController.findAll)
+router.get('/editar/:id', postController.indexEditar)
+
 
 //ruta POST
 router.post('/new', upload.single('fotopost'), postController.new)
 router.post('/borrar/:id', postController.borrar)
+router.post('/editar', postController.editar)
 
 
 

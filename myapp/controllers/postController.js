@@ -20,8 +20,17 @@ const postController = {
 
 //Agregar post
     indexAgregar: function(req, res, next) {
-        return res.render('agregarPost', {  });
+            return res.render('agregarPost', {  });
+   
     },
+//EDITAR POST
+    indexEditar: function(req, res, next) {
+        post.findByPk(req.params.id,)
+        .then(posteo =>{
+            return res.render('editarPost', {posteo: posteo});
+  
+        })
+        },
 
 //new 
     new: function(req, res, next) {
@@ -71,7 +80,7 @@ const postController = {
             }
         })
         .then(post => {
-            res.redirect('/')
+            res.redirect('/post/detalle/' + id)
         })
 
     },
@@ -85,6 +94,7 @@ const postController = {
                 nested: true
             }
             ],
+            order: [['comentarios','fecha','desc']]
             })
         .then(posteo =>{
             return res.render('detallePost', {posteo: posteo})

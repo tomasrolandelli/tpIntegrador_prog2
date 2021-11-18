@@ -51,9 +51,7 @@
                                 </form>
                             <%  } %>
                             <% if(locals.user.id == posteo.usuario.id){ %>
-                                <form action="/post/editar/<%=posteo.id%>" method="POST" class="uk-text-center">
-                                    <button class="uk-button uk-button-primary uk-margin-small-top" type="submit">EDITAR POST</button>   
-                                </form>
+                                <a href="/post/agregar/<%=posteo.id%>"><button class="uk-button uk-button-primary uk-margin-small-top" type="submit">EDITAR POST</button></a>
                             <%  } %>
                             <%  } %>
 

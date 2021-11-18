@@ -136,15 +136,12 @@ const userController = {
           errors.message = "El email no puede estar vacío.";
           res.locals.error = errors;
           return res.render('registracion'); 
-        } 
-        else if(req.body.password == "") {
-            errorscontrasenia.message = "La contraseña no puede estar vacía.";
+        } else if(req.body.password.length < 2) {
+            errorscontrasenia.message = "La contraseña debe tener al menos 3 caracteres";
             res.locals.error = errorscontrasenia; 
             return res.render('registracion');
 
-        }
-        
-        else {
+        } else {
       let passwordEncryptada = bcrypt.hashSync(req.body.password, 10)
       let date_ob = new Date()
       db.Usuario.create({
