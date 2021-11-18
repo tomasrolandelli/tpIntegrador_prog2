@@ -9,12 +9,10 @@ let bcrypt = require('bcryptjs')
 //Detalle de usuario
 const userController = {
     indexDetalle: function(req, res, next) {
-        usuario.findByPk(req.params.id,{
-            include: [
-            {association: "posteo", order: [[db.Posteo,'fecha', 'DESC']]}
-            ],
-            
-            })
+        usuario.findByPk(req.params.id, {
+            include: [{all: true}],
+            order: [['posteo', 'fecha', 'desc']]
+          })    
         .then(usuario =>{
             return res.render('detalleUsuario', {usuario: usuario} )
         })
@@ -31,11 +29,10 @@ const userController = {
 
 //Mi perfil
       indexMiPerfil: function(req, res, next) {
-        usuario.findByPk(req.session.user.id,{
-            include: [
-            {association: "posteo"},
-            ]
-            })
+        usuario.findByPk(req.session.user.id, {
+            include: [{all: true}],
+            order: [['posteo', 'fecha', 'desc']]
+          })   
         .then(usuario =>{
             return res.render('miPerfil', {usuario: usuario} )
         })
@@ -140,7 +137,7 @@ const userController = {
           res.locals.error = errors;
           return res.render('registracion'); 
         } 
-        else if(passwordEncryptada == "") {
+        else if(req.body.password == "") {
             errorscontrasenia.message = "La contraseña no puede estar vacía.";
             res.locals.error = errorscontrasenia; 
             return res.render('registracion');
@@ -148,9 +145,6 @@ const userController = {
         }
         
         else {
-    
-
-
       let passwordEncryptada = bcrypt.hashSync(req.body.password, 10)
       let date_ob = new Date()
       db.Usuario.create({

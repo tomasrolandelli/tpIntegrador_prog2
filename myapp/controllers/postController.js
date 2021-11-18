@@ -63,13 +63,15 @@ const postController = {
         let id = req.params.id
         post.update({
             description: req.body.pie,
+            foto: req.file.filename,
+
         }, 
         {where: {
                 id: id
             }
         })
         .then(post => {
-            res.redirect('/usuario/mi-perfil')
+            res.redirect('/')
         })
 
     },
