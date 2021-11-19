@@ -10,12 +10,12 @@
                         <li><a href="/">Home</a></li>
                         <li>
                             <form action="/usuario/logout" method="POST">
-                                <button>
+                                <button id='logout'>
                                     Cerrar sesión
                                 </button>
                             </form>
                         </li>
-                        <l1>Bienvenido <%= locals.user.email%></l1>
+                        <l1 id="bienvenido">Bienvenido <%= locals.user.nombre_usuario%></l1>
                     </ul>
                 </div>
                 <div class="uk-navbar-right">

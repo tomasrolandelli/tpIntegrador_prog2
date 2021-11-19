@@ -1,20 +1,33 @@
 section.detalle-container{
-    border: 1px solid lightgray;
+    border: 3px solid rgb(0, 0, 0);
     margin-top: 10px;
+    padding: 5px 5px 5px 5px;
 }
-
+.agregar-comentario{
+    display: flex;
+    flex-direction: column;
+}
+.agregar-comentario #comentar{
+    width: 100% !important
+}
 article.detalle-post{
     border-right: 1px solid lightgray;
+    flex-direction: column;
+}
+article.detalle-post h4{
+    color: black;
 }
 
 .comentarios-detalle{
     border-left: 1px solid lightgray;
+    padding-left: 5px;
 }
 
 .comentarios-detalle .info-post{
-    height: 10%;
     border-bottom: 1px solid lightgray;
     padding-left: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 
 .comentarios-detalle .info-post img{
@@ -30,7 +43,7 @@ article.detalle-post{
 }
 
 .comentarios-detalle .lista-comentarios{
-    height: 75%;
+    height: 50%;
     padding-left: 5px;
     border-bottom: 1px solid lightgray;
     overflow: scroll;
@@ -41,9 +54,8 @@ article.detalle-post{
 }
 
 .comentarios-detalle .agregar-comentario{
-    height: 15%;
-    padding-left: 5px;
-    width: 90% 
+    height: 15%; 
+    width: 100% 
 }
 
 .comentarios-detalle .lista-comentarios{
@@ -64,11 +76,33 @@ article.detalle-post{
     font-size: 13px;
     margin-left: 2px !important;
 }
-
 .comentarios-detalle .lista-comentarios .comentario h6 a{
     font-weight: bolder;
     font-size: 15px;
     color: black;
     text-decoration: none;
     margin-right: 4px !important;
+}
+.agregar-comentario{
+    margin-bottom: auto;
+}
+.agregar-comentario button{
+    width: 100%;
+}
+.agregar-comentario #form{
+    width: 100%;
+    margin-top: 5px;
+}
+.agregar-comentario a{
+    width: 100%;
+}
+.boton{
+    width: 33%;
+    background-color: rgb(13, 134, 171);
+}
+.botonrojo{
+    background-color: crimson;
+}
+.info-post{
+    height: auto;
 }

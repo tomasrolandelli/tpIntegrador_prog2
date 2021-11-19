@@ -5,8 +5,17 @@
 header{
     height: 55px;
     padding-top: 10px;
+    color: white !important;
 }
-
+#logout{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
 .verdeFondo{
     background-color: rgb(3, 58, 3) !important;
 }
@@ -28,6 +37,9 @@ header nav ul li a:hover,
 header a:hover{
     color: lightsteelblue;
     text-decoration: none;
+}
+#bienvenido{
+    margin-left: 5px;
 }
 
 .logo{

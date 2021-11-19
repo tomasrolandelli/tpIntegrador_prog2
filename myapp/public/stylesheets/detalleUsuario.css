@@ -19,3 +19,10 @@
     color: gray;
     text-decoration: none;
 }
+.datos{
+    display: flex;
+    justify-content: space-between;
+}
+.datos ul{
+    width: 60%;
+}

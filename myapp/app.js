@@ -11,7 +11,7 @@ var postRouter = require('./routes/post');
 var comentarioRouter = require('./routes/comentario');
 
 var db = require("./database/models");
-db.sequelize.sync({ alter: true }); //esto es para syncear
+//db.sequelize.sync({ alter: true }); //esto es para syncear
 
 const session = require('express-session')
 

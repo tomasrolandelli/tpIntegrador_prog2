@@ -1,5 +1,5 @@
 article.post{
-    border: 1px solid lightgray;
+    border: 3px solid rgb(0, 0, 0);
     border-radius: 10px;
     margin-bottom: 10px;
 }

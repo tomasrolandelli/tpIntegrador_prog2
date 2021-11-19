@@ -22,14 +22,14 @@
                 <br>
                 <section class="info-usuario uk-flex uk-flex-around uk-width-1-1">
                     <div class="uk-width-1-3 uk-flex uk-flex-center uk-flex-middle">
-                        <img src="<%=usuario.foto%>" alt="foto de perfil" class="foto-perfil">
+                        <img src="/images/<%=usuario.foto%>" alt="foto de perfil" class="foto-perfil">
                     </div>
                     <div class="uk-width-2-3 uk-flex uk-flex-column uk-flex-around">
                         <div class="uk-flex uk-flex-middle">
                             <h3 class="uk-margin-remove"><%=usuario.nombre_usuario%></h3>
                             <button class="uk-button uk-button-small uk-button-primary uk-margin-left">Seguir</button>
                         </div>
-                        <div>
+                        <div class="datos">
                             <ul class="red-usuario uk-flex uk-flex-between uk-width-1-2">
                                 <li><%=usuario.posteo.length%> posts </li>
                                 <li>300M seguidores</li>
@@ -43,7 +43,7 @@
                         <% for (let i = 0; i < usuario.posteo.length; i++){ %> 
                         <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
                             <a href="/post/detalle/<%=usuario.posteo[i].id%>" class="link-detalle">
-                                <img src="<%=usuario.posteo[i].foto%>" alt="posteo" class="foto-perfil">
+                                <img src="/images/<%=usuario.posteo[i].foto%>" alt="posteo" class="">
                                 <p class="uk-text-center"><%=usuario.posteo[i].description%></p>
                             </a>
                         </div>
