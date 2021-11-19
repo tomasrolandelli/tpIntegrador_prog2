@@ -162,6 +162,7 @@ editar:function(req,res){
 //Registracion
     register: function(req, res){
 
+
         let errors = {};
         let errorscontrasenia = {}
         if(req.body.email == "") {
