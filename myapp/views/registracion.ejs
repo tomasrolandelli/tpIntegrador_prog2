@@ -17,9 +17,9 @@
     
 
             <main>
-                <div >
+                <div class="container">
                     <div class="padi">
-                        <h2>Si no tenes una cuenta registrate</h2>
+                        <h2>Registrate para ver las ultimas publicaciones de Futbol!</h2>
                     </div>
                     <% if(locals.error != undefined){ %>
                         <p ><%=error.message%></p>
@@ -51,13 +51,13 @@
         
 
                         <h4>Agrega foto de perfil</h4>
-                        <input class="form-input" type="file" name="fotoperfil"  class="inputformulario" 
+                        <input class="form-input" type="file" name="fotoperfil"  class="boton1 inputformulario" 
                         onfocus="search()" placeholder="Foto de perfil" accept="image/png">
-                        <button type="submit"> Agregar </button>
+                        <button class="boton1" type="submit"> Agregar </button>
                         
                         <br>
                         <br>
-                        <button type="submit"> Enter </button>
+                        <button class="boton1" type="submit"> Enter </button>
                         <br>
                         <br>
                         <br>

@@ -3,7 +3,9 @@
 }
 .container{
     margin-left: 30%;
-    top: 100px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    padding-bottom: 10px;
     width: 40%;
     border-radius: 100px;
     border: 5px solid darkgreen;
