@@ -28,10 +28,8 @@ header nav{
   
 
 
-  @media (min-width:1024px) {
 
 header{
-    height: 55px;
     padding-top: 10px;
     color: white !important;
 }
@@ -106,4 +104,55 @@ header div.uk-navbar-center ul li:nth-last-child(1){
 header nav form input, header nav form ::placeholder, header nav form span{
     color: white !important;
 }
-  }
+
+@media(max-width:400px){
+    header{
+        font-size: small;
+        padding-bottom: 5px;
+    }
+    main{
+        font-size: small !important;
+    }
+    
+    header nav{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: column;
+    
+      } 
+    header nav .divheader:last-child{
+        width: 100%;
+        margin-top: 50px;
+        align-content: center;
+        display: flex;
+        justify-content: center;
+    }
+    header nav .divheader:last-child form{
+        width: 100%;
+    }
+    #posts ul{
+        width: 100% !important;
+        margin-left: 0px !important;
+        padding-left: 0px !important;
+    }
+
+    
+     
+      
+      
+      .verdeFondo{
+          background-color: rgb(3, 58, 3) !important;
+      }
+      
+      header nav ul li, 
+      header a{
+          color: white;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          
+      } 
+    
+      
+}

@@ -158,6 +158,26 @@ editar:function(req,res){
 
         res.redirect("/usuario/login")
     },
+    buscador:function(req, res){
+        let search = req.query.usuario
+        usuario.findAll({
+            where: [{'nombre_usuario': {[op.like]: `%${search}%`}}],
+            order: [['nombre_usuario', 'DESC'],],
+            limit: 10,
+            include: [
+          {
+            all: true,
+            nested: true
+        }
+        ],
+        })
+        .then(usuarios => {
+            return res.render('resultadoUsuario', {
+                usuarios: usuarios,
+                resultado: search
+            })
+        })
+    },
 
 //Registracion
     register: function(req, res){
