@@ -26,6 +26,14 @@
             <div class="uk-section uk-section-small">
                 <div class="uk-container uk-container-large uk-flex">
                     <section id="posts" class="uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-child-width-1-2 uk-width-1-1">
+                        <section id="mainSearch" class="uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-child-width-1-2 uk-width-1-1">
+                            <h2>Buscador de usuarios:</h2>
+                            <form method="GET" action="/usuario/buscador">
+                                <input type="search" name="usuario">
+                                <button >Enviar</button>
+                            </form>
+                        </section>
+
                         <h2>Resultados de posteos de <%= resultado %></h2>
                         <ul>
                         <% for (let i = 0; i < posteos.length; i++){ %> 
@@ -75,13 +83,7 @@
                 </div>
             </div>
             <% } %>
-            <section id="mainSearch" class="uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-child-width-1-2 uk-width-1-1">
-                <h2>Buscador de usuarios:</h2>
-                <form method="GET" action="/usuario/buscador">
-                    <input type="search" name="usuario">
-                    <button >Enviar</button>
-                </form>
-            </section>
+
         </main>
         
 
