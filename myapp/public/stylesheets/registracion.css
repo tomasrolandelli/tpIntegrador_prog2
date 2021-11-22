@@ -8,14 +8,16 @@ h4 {
 }
 
 input { 
-    width: 90%;
+    width: 100%;
     padding: 8px 6px;
     box-sizing: border-box;
     border-radius: 8px;
     margin-top: 5px;
 }
 .form-input{
-    width: 45%;
+    width: 100%;
+    justify-self: center;
+    margin-left: 25%;
 }
 button {
     background-color: white;
@@ -29,6 +31,7 @@ button {
     color: white;
     font-family: 'Montserrat', sans-serif;
     height: 30px;
+    margin-top: 10px;
 }
 .padi{
     margin-top: 10px;
@@ -49,4 +52,9 @@ button {
 
 .inputformulario:hover{
     background-color: rgb(159, 236, 159);
+}
+.container form{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }

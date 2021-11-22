@@ -158,6 +158,8 @@ editar:function(req,res){
 
         res.redirect("/usuario/login")
     },
+
+//buscador
     buscador:function(req, res){
         let search = req.query.usuario
         usuario.findAll({
@@ -172,10 +174,14 @@ editar:function(req,res){
         ],
         })
         .then(usuarios => {
+            //return res.send(usuarios)
             return res.render('resultadoUsuario', {
                 usuarios: usuarios,
                 resultado: search
             })
+        })
+        .catch(err =>{
+            console.log(err);
         })
     },
 

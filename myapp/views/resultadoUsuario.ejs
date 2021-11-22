@@ -3,6 +3,9 @@
 
 
     <%- include('./partials/head') %> 
+    <link rel="stylesheet" href="../stylesheets/resultadoBusqueda.css">
+
+
     
 
 <body>
@@ -14,19 +17,21 @@
 
     <% } %>
 
-        <main>
+        <main class="mainU">
             <% if(usuarios.length == 0){ %>
-        <h1 id="resultadoBusqueda">No se encontraron resultados de <%= resultado %> </h1>
+        <h1 id="resultadoBusqueda">No se encontraron usuarios con el termino: <%= resultado %> </h1>
+        <img src="/images/fail.png">
+
              <%  } else {%>
 
             <div class="uk-section uk-section-small">
                 <div class="uk-container uk-container-large uk-flex">
-                    <section id="posts" class="uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-child-width-1-2 uk-width-1-1">
-                        <h2>Resultados de posteos de <%= resultado %></h2>
+                    <section id="posteo" class="uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-child-width-1-2 uk-width-1-1">
+                        <h2>Resultados de usuarios con el termino: <%= resultado %></h2>
 
                         <ul>
-                            <% for(let i =0; i<usuarios.length;i++) %>
-                            <li><%= usuarios[i] %> </li>
+                            <% for(let i =0; i<usuarios.length;i++) {%>
+                            <li><a href="/usuario/detalle/<%= usuarios[i].id %>"><img clas='' src="/images/<%= usuarios[i].foto %>"><%= usuarios[i].nombre_usuario %> </a></li>
                             <% } %>  
                     </ul>
                 

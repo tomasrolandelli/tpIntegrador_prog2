@@ -16,9 +16,11 @@
 
     <% } %>
 
-        <main>
+        <main class="mainSearch">
             <% if(posteos.length == 0){ %>
         <h1 id="resultadoBusqueda">No se encontraron resultados de <%= resultado %> </h1>
+        <img src="/images/fail.png">
+
              <%  } else {%>
 
             <div class="uk-section uk-section-small">
@@ -73,11 +75,11 @@
                 </div>
             </div>
             <% } %>
-            <section id="posts" class="uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-child-width-1-2 uk-width-1-1">
+            <section id="mainSearch" class="uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-child-width-1-2 uk-width-1-1">
                 <h2>Buscador de usuarios:</h2>
                 <form method="GET" action="/usuario/buscador">
-                    <input name="usuario">
-                    <button>Enviar</button>
+                    <input type="search" name="usuario">
+                    <button >Enviar</button>
                 </form>
             </section>
         </main>
