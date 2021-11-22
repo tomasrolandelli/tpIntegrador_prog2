@@ -27,36 +27,36 @@ fecha DATETIME NOT NULL,
 FOREIGN KEY (postId) REFERENCES posteos(id),
 FOREIGN KEY (userId) REFERENCES usuarios(id)
 );
-INSERT INTO usuarios VALUES (DEFAULT, "messi10", "messidios10@gmail.com", "Messigod", "https://img.olympicchannel.com/images/image/private/t_1-1_600/f_auto/v1538355600/primary/wfrhxc0kh2vvq77sonki", "2020-01-01 23:40:50", 1);
-INSERT INTO usuarios VALUES (DEFAULT, "CR7", "elBicho@gmail.com", "cristianito", "https://ichef.bbci.co.uk/news/640/cpsprodpb/131F1/production/_96012387_gettyimages-479743416.jpg", "2020-07-03 20:15:20", 2);
-INSERT INTO usuarios VALUES (DEFAULT, "mbappe777", "kilian@gmail.com", "KilianDios", "https://img.a.transfermarkt.technology/portrait/big/342229-1602849394.jpg?lm=1", "2019-04-07 02:30:50", 3);
-INSERT INTO usuarios VALUES (DEFAULT, "neymarJR", "ney@gmail.com", "brasileroSoy", "https://img.a.transfermarkt.technology/portrait/big/68290-1602849593.jpg?lm=1", "2020-10-23 17:23:20", 4);
-INSERT INTO usuarios VALUES (DEFAULT, "lewangol", "robert@gmail.com", "lewangolski", "http://ntrzacatecas.com/content/uploads/2021/08/rr.jpg", "2019-02-11 12:22:33", 5);
+INSERT INTO usuarios VALUES (DEFAULT, "messi10", "messidios10@gmail.com", "Messigod", 'fotoMessi.webp', "2020-01-01 23:40:50", 1);
+INSERT INTO usuarios VALUES (DEFAULT, "CR7", "elBicho@gmail.com", "cristianito", 'fotoCris.jpg', "2020-07-03 20:15:20", 2);
+INSERT INTO usuarios VALUES (DEFAULT, "mbappe777", "kilian@gmail.com", "KilianDios", 'fotoMba.webp', "2019-04-07 02:30:50", 3);
+INSERT INTO usuarios VALUES (DEFAULT, "neymarJR", "ney@gmail.com", "brasileroSoy", 'fotoNey.webp', "2020-10-23 17:23:20", 4);
+INSERT INTO usuarios VALUES (DEFAULT, "lewangol", "robert@gmail.com", "lewangolski", 'fotoLewa.jpg', "2019-02-11 12:22:33", 5);
 UPDATE usuarios
-SET foto = "https://img.olympicchannel.com/images/image/private/t_1-1_600/f_auto/v1538355600/primary/wfrhxc0kh2vvq77sonki"
+SET foto = 'fotoMessi.webp'
 WHERE id= 1;
 UPDATE usuarios
-SET foto = "https://ichef.bbci.co.uk/news/640/cpsprodpb/131F1/production/_96012387_gettyimages-479743416.jpg"
+SET foto = 'fotoCris.jpg'
 WHERE id= 2;
 UPDATE usuarios
-SET foto = "https://img.a.transfermarkt.technology/portrait/big/342229-1602849394.jpg?lm=1"
+SET foto = 'fotoMba.webp'
 WHERE id= 3;
 UPDATE usuarios
-SET foto = "https://img.a.transfermarkt.technology/portrait/big/68290-1602849593.jpg?lm=1"
+SET foto = 'fotoNey.webp'
 WHERE id= 4;
 UPDATE usuarios
-SET foto = "http://ntrzacatecas.com/content/uploads/2021/08/rr.jpg"
+SET foto = 'fotoLewa.jpg'
 WHERE id= 5;
-INSERT INTO posteos VALUES (DEFAULT, 1, "https://pbs.twimg.com/media/E8GWtMiXIAAi6p5.jpg", "Arranco una nueva etapa en mi vida y lo hago con toda la motivación y las ganas de seguir aprendiendo cada día. Trabajaremos por cumplir los objetivos del @psg. #AllezParis", "2020-07-01 21:11:50");
-INSERT INTO posteos VALUES (DEFAULT, 1, "https://phantom-marca.unidadeditorial.es/d16bf67fef4eb1b0b68d327520444947/resize/660/f/webp/assets/multimedia/imagenes/2021/07/17/16265320344770.jpg", "Qué hermosa locura!!! Esto es increíble, gracias Dios!!! SOMOS CAMPEONES LA CONCHA DE SU MADRE!!!!!! Vamossss carajooooo! #VamosArgentina", "2020-08-12 19:12:44");
-INSERT INTO posteos VALUES (DEFAULT, 2, "https://phantom-marca.unidadeditorial.es/6e230bb2f73bda5bec9e16692e4aaac9/resize/660/f/webp/assets/multimedia/imagenes/2021/09/02/16306102617376.jpg", "Everyone who knows me, knows about my never ending love for Manchester United. The years I spent in this club where absolutely amazing and the path we’ve made together is written in gold letters in the history of this great and amazing institution.", "2021-09-18 21:32:44");
-INSERT INTO posteos VALUES (DEFAULT, 2, "https://images.ole.com.ar/2020/08/10/fj0D_3w2t_930x525__2.jpg#1597079424586", "Quem diz que em Manchester não há sol?!?! #blessedfamily", "2021-03-16 12:22:11");
-INSERT INTO posteos VALUES (DEFAULT, 3, "https://mbpschool-b4f9.kxcdn.com/wp-content/uploads/2020/10/04_SEM03_OCT_MBP-16_9.jpg", "5 games. 5 wins. ICI C’EST PARIS", "2021-02-22 06:55:41");
-INSERT INTO posteos VALUES (DEFAULT, 3, "https://www.lavanguardia.com/files/image_948_465/files/fp/uploads/2021/06/07/60bdf72c3af50.r_d.1995-951.jpeg", "End…", "2021-07-12 09:49:04");
-INSERT INTO posteos VALUES (DEFAULT, 4, "https://www.futbolred.com/files/image_800_600/uploads/2020/10/10/5f81c831a29a1.jpeg", "Buen partido pero no pudimos ganarle al mejor de america :(. Todos sabemos que Argentina es 10 veces mejor que Brasil", "2021-10-24 21:46:16");
-INSERT INTO posteos VALUES (DEFAULT, 4, "https://images.mediotiempo.com/_CrD-BWufSnJKrR-SsDGXSgyagw=/958x596/uploads/media/2020/05/07/es-bien-sabido-que-ney.jpg", "Haciendo lo que mejor hago (despues de tirarme y llorar en los partidos) ", "2019-11-21 01:52:22");
-INSERT INTO posteos VALUES (DEFAULT, 5, "https://www.fcbarcelonanoticias.com/uploads/s1/12/45/22/5/lewan-record-champions.jpeg", "A new chapter begins tommorow️ @fcbayern #UCL", "2020-08-06 09:18:55");
-INSERT INTO posteos VALUES (DEFAULT, 5, "https://assets-es.imgfoot.com/media/cache/1200x900/lewandowski-bayern-triple-2020.jpg", "Good to be back @fcbayern", "2021-07-07 03:23:35");
+INSERT INTO posteos VALUES (DEFAULT, 1, 'postMessi.jpg', "Arranco una nueva etapa en mi vida y lo hago con toda la motivación y las ganas de seguir aprendiendo cada día. Trabajaremos por cumplir los objetivos del @psg. #AllezParis", "2020-07-01 21:11:50");
+INSERT INTO posteos VALUES (DEFAULT, 1, 'postMessi2.webp', "Qué hermosa locura!!! Esto es increíble, gracias Dios!!! SOMOS CAMPEONES LA CONCHA DE SU MADRE!!!!!! Vamossss carajooooo! #VamosArgentina", "2020-08-12 19:12:44");
+INSERT INTO posteos VALUES (DEFAULT, 2, 'postCris.webp', "Everyone who knows me, knows about my never ending love for Manchester United. The years I spent in this club where absolutely amazing and the path we’ve made together is written in gold letters in the history of this great and amazing institution.", "2021-09-18 21:32:44");
+INSERT INTO posteos VALUES (DEFAULT, 2, 'postCris2.jpg', "Quem diz que em Manchester não há sol?!?! #blessedfamily", "2021-03-16 12:22:11");
+INSERT INTO posteos VALUES (DEFAULT, 3, 'postMba.webp', "5 games. 5 wins. ICI C’EST PARIS", "2021-02-22 06:55:41");
+INSERT INTO posteos VALUES (DEFAULT, 3, "postMba2.jpeg", "End…", "2021-07-12 09:49:04");
+INSERT INTO posteos VALUES (DEFAULT, 4, "postNey.jpeg", "Buen partido pero no pudimos ganarle al mejor de america :(. Todos sabemos que Argentina es 10 veces mejor que Brasil", "2021-10-24 21:46:16");
+INSERT INTO posteos VALUES (DEFAULT, 4, "postNey2.jpg", "Haciendo lo que mejor hago (despues de tirarme y llorar en los partidos) ", "2019-11-21 01:52:22");
+INSERT INTO posteos VALUES (DEFAULT, 5, "postLewa.jpeg", "A new chapter begins tommorow️ @fcbayern #UCL", "2020-08-06 09:18:55");
+INSERT INTO posteos VALUES (DEFAULT, 5, "postLewa2.webp", "Good to be back @fcbayern", "2021-07-07 03:23:35");
 INSERT INTO comentarios VALUES (DEFAULT, 2, 1, "Mucha suerteee!", "2020-07-01 22:12:52");
 INSERT INTO comentarios VALUES (DEFAULT, 3, 1, "Exito", "2020-07-01 23:12:50");
 INSERT INTO comentarios VALUES (DEFAULT, 4, 1, "Crackkkkkk", "2020-07-01 23:11:50");
