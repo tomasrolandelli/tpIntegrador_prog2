@@ -27,13 +27,13 @@
                         onfocus="search()" placeholder="Ej. Leomessi10@gmail.com">
                         <div></div>
                         <% if(locals.error != undefined) {  %> 
-                            <p><%= error.message  %> </p>
+                            <p class="error"><%= error.message  %> </p>
                         <% } %> 
                         <h4> Contraseña </h4><input type="password" name="password" value="" class="inputformulario" 
                         onfocus="search()" placeholder="Contraseña">
                         <br>
                         <% if(locals.errorscontrasenia != undefined){ %>
-                            <p ><%=errorscontrasenia.message%></p>
+                            <p class="error"><%=errorscontrasenia.message%></p>
                             <% }  %>
                         <label for="">Recordar usuario</label><input type="checkbox" name="recordame" id="">
                         <br>

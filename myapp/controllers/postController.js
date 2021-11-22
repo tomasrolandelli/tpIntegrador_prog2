@@ -72,10 +72,11 @@ const postController = {
     //Editar post
 
     editar: function(req, res) {
+        let date_ob = new Date()
         post.update({
             description: req.body.pie,
             foto: req.file.filename,
-
+            update_at: date_ob,
         }, 
         {where: {
                 id: req.params.id

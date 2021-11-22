@@ -2,8 +2,6 @@ const db = require('../database/models');
 const op = db.Sequelize.Op;
 const usuario = db.Usuario;
 const post = db.Posteos;
-const dataPost = require ('../data/posts')
-const dataUser = require ('../data/usuario')
 let bcrypt = require('bcryptjs')
 
 //Detalle de usuario
@@ -36,11 +34,13 @@ indexEditar: function(req, res, next) {
 //editar perfil
 editar:function(req,res){
     let passwordEncryptada = bcrypt.hashSync(req.body.password, 10)
+    let date_ob = new Date()
     usuario.update({
         nombre_usuario: req.body.nombre,
         email: req.body.email,
         contrasenia: passwordEncryptada,
-        foto: req.file.filename
+        foto: req.file.filename,
+        update_at: date_ob,
     }, 
     {where: {
             id: req.params.id
@@ -82,6 +82,7 @@ editar:function(req,res){
 
         let errors = {}
         let errorscontrasenia = {}
+        let errorNuevo = {}
 
         if(req.body.email == ""){
             errors.message = "El campo de email no puede estar vacio";
@@ -107,7 +108,9 @@ editar:function(req,res){
                         }
                         res.redirect("/")
                     }else {
-                        res.send("Credenciales invalidas")
+                        errorNuevo.message = "Credenciales Invalidas"
+                        res.locals.error = errorNuevo;
+                        return res.render('login')
                     }
                 }
             })
@@ -200,7 +203,12 @@ editar:function(req,res){
             res.locals.error = errorscontrasenia; 
             return res.render('registracion');
 
-        } else {
+        } else if(req.file == undefined){
+        errors.message = "La foto de perfil no puede estar vacia";
+          res.locals.error = errors;
+          return res.render('registracion'); 
+        }else{
+            
       let passwordEncryptada = bcrypt.hashSync(req.body.password, 10)
       let date_ob = new Date()
       db.Usuario.create({

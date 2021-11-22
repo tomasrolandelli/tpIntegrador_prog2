@@ -22,6 +22,9 @@ module.exports = function(sequelize, dataTypes){
         fecha:{
             type: dataTypes.DATE,
         },
+        update_at:{
+            type: dataTypes.DATE
+        }
     }
     
     let config = {

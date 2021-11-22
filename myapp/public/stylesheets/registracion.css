@@ -58,3 +58,10 @@ button {
     flex-direction: column;
     align-content: center;
 }
+.error{
+    color: red;
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: black;
+}

@@ -22,11 +22,11 @@
                         <h2>Registrate para ver las ultimas publicaciones de Futbol!</h2>
                     </div>
                     <% if(locals.error != undefined){ %>
-                        <p ><%=error.message%></p>
+                        <p class="error"><%=error.message%></p>
                         <%  }  %> 
                     
                     <% if(locals.errorscontrasenia != undefined){ %>
-                        <p ><%=errorscontrasenia.message%></p>
+                        <p class="error"><%=errorscontrasenia.message%></p>
                         <% }  %>
                     <div>
                      <form action="/usuario/registracion" method="POST" class="pi" enctype="multipart/form-data">
