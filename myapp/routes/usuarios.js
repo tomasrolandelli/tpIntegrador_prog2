@@ -23,6 +23,8 @@ router.get('/editar/:id', userController.indexEditar)
 router.get('/mi-perfil', userController.indexMiPerfil)
 router.get('/login', userController.loginIndex)
 router.get('/registracion', userController.indexRegistracion)
+router.get('/buscador', userController.buscador)
+
 
 //POST
 router.post('/registracion',upload.single('fotoperfil'), userController.register)
