@@ -10,7 +10,7 @@ foto VARCHAR(150) NULL,
 fecha DATETIME NOT NULL,
 numerico INT NOT NULL,
 fecha_de_nacimiento DATETIME,
-update_at DATETIME,
+update_at DATETIME
 );
 CREATE TABLE posteos(
 id INT PRIMARY KEY AUTO_INCREMENT,
@@ -31,11 +31,11 @@ fecha DATETIME NOT NULL,
 FOREIGN KEY (postId) REFERENCES posteos(id),
 FOREIGN KEY (userId) REFERENCES usuarios(id)
 );
-INSERT INTO usuarios VALUES (DEFAULT, "messi10", "messidios10@gmail.com", "Messigod", 'fotoMessi.webp', "2020-01-01 23:40:50", 1);
-INSERT INTO usuarios VALUES (DEFAULT, "CR7", "elBicho@gmail.com", "cristianito", 'fotoCris.jpg', "2020-07-03 20:15:20", 2);
-INSERT INTO usuarios VALUES (DEFAULT, "mbappe777", "kilian@gmail.com", "KilianDios", 'fotoMba.webp', "2019-04-07 02:30:50", 3);
-INSERT INTO usuarios VALUES (DEFAULT, "neymarJR", "ney@gmail.com", "brasileroSoy", 'fotoNey.webp', "2020-10-23 17:23:20", 4);
-INSERT INTO usuarios VALUES (DEFAULT, "lewangol", "robert@gmail.com", "lewangolski", 'fotoLewa.jpg', "2019-02-11 12:22:33", 5);
+INSERT INTO usuarios VALUES (DEFAULT, "messi10", "messidios10@gmail.com", "Messigod", 'fotoMessi.webp', "2020-01-01 23:40:50", 1, null, null);
+INSERT INTO usuarios VALUES (DEFAULT, "CR7", "elBicho@gmail.com", "cristianito", 'fotoCris.jpg', "2020-07-03 20:15:20", 2, null, null);
+INSERT INTO usuarios VALUES (DEFAULT, "mbappe777", "kilian@gmail.com", "KilianDios", 'fotoMba.webp', "2019-04-07 02:30:50", 3, null, null);
+INSERT INTO usuarios VALUES (DEFAULT, "neymarJR", "ney@gmail.com", "brasileroSoy", 'fotoNey.webp', "2020-10-23 17:23:20", 4, null, null);
+INSERT INTO usuarios VALUES (DEFAULT, "lewangol", "robert@gmail.com", "lewangolski", 'fotoLewa.jpg', "2019-02-11 12:22:33", 5, null, null);
 UPDATE usuarios
 SET foto = 'fotoMessi.webp'
 WHERE id= 1;
@@ -51,16 +51,16 @@ WHERE id= 4;
 UPDATE usuarios
 SET foto = 'fotoLewa.jpg'
 WHERE id= 5;
-INSERT INTO posteos VALUES (DEFAULT, 1, 'postMessi.jpg', "Arranco una nueva etapa en mi vida y lo hago con toda la motivación y las ganas de seguir aprendiendo cada día. Trabajaremos por cumplir los objetivos del @psg. #AllezParis", "2020-07-01 21:11:50");
-INSERT INTO posteos VALUES (DEFAULT, 1, 'postMessi2.webp', "Qué hermosa locura!!! Esto es increíble, gracias Dios!!! SOMOS CAMPEONES LA CONCHA DE SU MADRE!!!!!! Vamossss carajooooo! #VamosArgentina", "2020-08-12 19:12:44");
-INSERT INTO posteos VALUES (DEFAULT, 2, 'postCris.webp', "Everyone who knows me, knows about my never ending love for Manchester United. The years I spent in this club where absolutely amazing and the path we’ve made together is written in gold letters in the history of this great and amazing institution.", "2021-09-18 21:32:44");
-INSERT INTO posteos VALUES (DEFAULT, 2, 'postCris2.jpg', "Quem diz que em Manchester não há sol?!?! #blessedfamily", "2021-03-16 12:22:11");
-INSERT INTO posteos VALUES (DEFAULT, 3, 'postMba.webp', "5 games. 5 wins. ICI C’EST PARIS", "2021-02-22 06:55:41");
-INSERT INTO posteos VALUES (DEFAULT, 3, "postMba2.jpeg", "End…", "2021-07-12 09:49:04");
-INSERT INTO posteos VALUES (DEFAULT, 4, "postNey.jpeg", "Buen partido pero no pudimos ganarle al mejor de america :(. Todos sabemos que Argentina es 10 veces mejor que Brasil", "2021-10-24 21:46:16");
-INSERT INTO posteos VALUES (DEFAULT, 4, "postNey2.jpg", "Haciendo lo que mejor hago (despues de tirarme y llorar en los partidos) ", "2019-11-21 01:52:22");
-INSERT INTO posteos VALUES (DEFAULT, 5, "postLewa.jpeg", "A new chapter begins tommorow️ @fcbayern #UCL", "2020-08-06 09:18:55");
-INSERT INTO posteos VALUES (DEFAULT, 5, "postLewa2.webp", "Good to be back @fcbayern", "2021-07-07 03:23:35");
+INSERT INTO posteos VALUES (DEFAULT, 1, 'postMessi.jpg', "Arranco una nueva etapa en mi vida y lo hago con toda la motivación y las ganas de seguir aprendiendo cada día. Trabajaremos por cumplir los objetivos del @psg. #AllezParis", "2020-07-01 21:11:50", null);
+INSERT INTO posteos VALUES (DEFAULT, 1, 'postMessi2.webp', "Qué hermosa locura!!! Esto es increíble, gracias Dios!!! SOMOS CAMPEONES LA CONCHA DE SU MADRE!!!!!! Vamossss carajooooo! #VamosArgentina", "2020-08-12 19:12:44", null);
+INSERT INTO posteos VALUES (DEFAULT, 2, 'postCris.webp', "Everyone who knows me, knows about my never ending love for Manchester United. The years I spent in this club where absolutely amazing and the path we’ve made together is written in gold letters in the history of this great and amazing institution.", "2021-09-18 21:32:44", null);
+INSERT INTO posteos VALUES (DEFAULT, 2, 'postCris2.jpg', "Quem diz que em Manchester não há sol?!?! #blessedfamily", "2021-03-16 12:22:11", null);
+INSERT INTO posteos VALUES (DEFAULT, 3, 'postMba.webp', "5 games. 5 wins. ICI C’EST PARIS", "2021-02-22 06:55:41", null);
+INSERT INTO posteos VALUES (DEFAULT, 3, "postMba2.jpeg", "End…", "2021-07-12 09:49:04", null);
+INSERT INTO posteos VALUES (DEFAULT, 4, "postNey.jpeg", "Buen partido pero no pudimos ganarle al mejor de america :(. Todos sabemos que Argentina es 10 veces mejor que Brasil", "2021-10-24 21:46:16", null);
+INSERT INTO posteos VALUES (DEFAULT, 4, "postNey2.jpg", "Haciendo lo que mejor hago (despues de tirarme y llorar en los partidos) ", "2019-11-21 01:52:22", null);
+INSERT INTO posteos VALUES (DEFAULT, 5, "postLewa.jpeg", "A new chapter begins tommorow️ @fcbayern #UCL", "2020-08-06 09:18:55", null);
+INSERT INTO posteos VALUES (DEFAULT, 5, "postLewa2.webp", "Good to be back @fcbayern", "2021-07-07 03:23:35", null);
 INSERT INTO comentarios VALUES (DEFAULT, 2, 1, "Mucha suerteee!", "2020-07-01 22:12:52");
 INSERT INTO comentarios VALUES (DEFAULT, 3, 1, "Exito", "2020-07-01 23:12:50");
 INSERT INTO comentarios VALUES (DEFAULT, 4, 1, "Crackkkkkk", "2020-07-01 23:11:50");
