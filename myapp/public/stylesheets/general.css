@@ -12,6 +12,7 @@ main{
     background-size: 1000px;
     padding-top: 20px;
     padding-bottom: 20px;
+    min-height: 800px;
 }
 
 footer{
@@ -24,3 +25,4 @@ footer{
     padding: 2px 2px 2px 2px;
     border-radius: 50%;
 }
+

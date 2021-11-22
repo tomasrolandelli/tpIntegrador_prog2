@@ -8,7 +8,9 @@ email VARCHAR(120) UNIQUE NOT NULL,
 contrasenia VARCHAR(200) NOT NULL,
 foto VARCHAR(150) NULL,
 fecha DATETIME NOT NULL,
-numerico INT NOT NULL
+numerico INT NOT NULL,
+fecha_de_nacimiento DATETIME,
+update_at DATETIME,
 );
 CREATE TABLE posteos(
 id INT PRIMARY KEY AUTO_INCREMENT,
@@ -16,8 +18,10 @@ userId INT NOT NULL,
 foto VARCHAR(150) NOT NULL,
 description VARCHAR(250),
 fecha DATETIME NOT NULL,
+update_at DATETIME,
 FOREIGN KEY (userId) REFERENCES usuarios(id)
 );
+
 CREATE TABLE comentarios(
 id INT PRIMARY KEY AUTO_INCREMENT,
 userId INT NOT NULL,
