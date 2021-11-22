@@ -48,11 +48,11 @@
                             <% if(locals.user != undefined){ %>
                             <% if(locals.user.id == posteo.usuario.id){ %>
                                 <form id='form' action="/post/borrar/<%=posteo.id%>" method="POST" class="uk-text-center">
-                                    <button class="botonamarillo" type="submit">BORRAR POST</button>   
+                                    <button class="botonrojo" type="submit">BORRAR POST</button>   
                                 </form>
                             <%  } %>
                             <% if(locals.user.id == posteo.usuario.id){ %>
-                                <a id='form' href="/post/editar/<%=posteo.id%>"><button class="botonrojo" type="submit">EDITAR POST</button></a>
+                                <a id='form' href="/post/editar/<%=posteo.id%>"><button type="submit">EDITAR POST</button></a>
                             <%  } %>
                             <%  } %>
 
