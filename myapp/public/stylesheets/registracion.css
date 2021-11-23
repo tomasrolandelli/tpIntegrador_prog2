@@ -68,3 +68,10 @@ button {
 .obligrojo{
     color: red;
 }
+@media(max-width:400px){
+    main .formularios{
+        margin: 0px;
+        margin-left: 35px;
+        width: 80%;
+    }
+}
