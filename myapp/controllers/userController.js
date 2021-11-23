@@ -192,36 +192,40 @@ editar:function(req,res){
     register: function(req, res){
 
 
-        let errors = {};
+        let errors = {};//declaro variables para mostrar errores en la vista
         let errorscontrasenia = {}
-        if(req.body.email == "") {
+        if(req.body.email == "") {//para cuando email este vacio
           errors.message = "El email no puede estar vacío.";
           res.locals.error = errors;
           return res.render('registracion'); 
-        } else if(req.body.password.length < 2) {
+        } else if(req.body.password.length < 2) {//para passwords con menos de 2 caracteres
             errorscontrasenia.message = "La contraseña debe tener al menos 3 caracteres";
             res.locals.error = errorscontrasenia; 
             return res.render('registracion');
 
-        } else if(req.file == undefined){
+        } else if(req.file == undefined){//para cuando no hay foto de perfil
         errors.message = "La foto de perfil no puede estar vacia";
           res.locals.error = errors;
           return res.render('registracion'); 
-        }else{
+        }else{//en caso de validar todo lo anterior se ejecuta la registracion
             
-      let passwordEncryptada = bcrypt.hashSync(req.body.password, 10)
-      let date_ob = new Date()
+      let passwordEncryptada = bcrypt.hashSync(req.body.password, 10)//encryptar password
+      let date_ob = new Date()//fecha actual
+      let fechaNac = null
+      if(req.body.fecha != undefined){//si la fecha fue ingresada que reemplaze al valor null
+          fechaNac = req.body.fecha
+      }
       db.Usuario.create({
         nombre_usuario: req.body.name,
         email: req.body.email,
         contrasenia: passwordEncryptada,
-        foto: req.file.filename,
+        foto: req.file.filename,//multer
         fecha: date_ob,
         numerico: 1,
-        fecha_de_nacimiento: req.body.date,
+        fecha_de_nacimiento: fechaNac,
         update_at: null
       })
-      .then(user =>{
+      .then(user =>{//al ser una peticion por post debemos hacer un redirect a la pagina principal
         res.redirect('/')
       })
       .catch(err=>{
