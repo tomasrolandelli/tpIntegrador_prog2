@@ -27,17 +27,30 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(session( { secret: "Si lees esto tenes que darnos un 10",
-				resave: false,
-				saveUninitialized: true }));
+app.use(session({
+  secret: "Si lees esto tenes que darnos un 10",
+  resave: false,
+  saveUninitialized: true
+}));
 
 
-app.use(function(req,res,next){
-  res.locals.user=null
+app.use(function (req, res, next) {
+  if (req.cookies.usuarioId != undefined && req.session.user == undefined) {
+    db.Usuario.findByPk(req.cookies.usuarioId)
+      .then(user => {
+        req.session.user = user.email
+        res.locals.user = req.session.user
+      })
+  }
+  return next();
+})
 
-  if(req.session.user != undefined){
+app.use(function (req, res, next) {
+  res.locals.user = null
+
+  if (req.session.user != undefined) {
     res.locals.user = req.session.user
-  }else{
+  } else {
 
   }
   return next();
@@ -52,12 +65,12 @@ app.use('/comentario', comentarioRouter);
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
